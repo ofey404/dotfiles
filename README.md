@@ -16,6 +16,14 @@ Special notes below to indicate something which couldn't be installed by apt-get
 wget https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | sh
 ```
 
+## use a exist tmux conf
+
+https://githubhttps://github.com/samoshkin/tmux-config#copy-mode.com/samoshkin/tmux-config#copy-mode
+
+this bro has made a great hack.
+
+learn how to add the project as a submodule, and add this as a submodule of my dot file
+
 ## stow - manage link
 
 want to make link for configuration files in dotfiles/git:
