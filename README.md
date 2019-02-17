@@ -2,7 +2,13 @@
 
 ## install
 
-install vim zsh tmux autojump stow by package manager
+**install vim zsh tmux autojump stow by package manager**
+
+```shell
+sudo apt-get install vim zsh tmux autojump stow
+```
+
+then execute:
 
 ```shell
 git clone --recursive git@github.com:ofey404/dotfiles.git .dotfiles
