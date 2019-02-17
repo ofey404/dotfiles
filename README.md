@@ -32,7 +32,7 @@ wget https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - 
 
 ## use a exist tmux conf
 
-https://githubhttps://github.com/samoshkin/tmux-config#copy-mode.com/samoshkin/tmux-config#copy-mode
+https://github.com/samoshkin/tmux-config#copy-mode.com/samoshkin/tmux-config#copy-mode
 
 this bro has made a great hack. This is his article: [tmux in pracitce](https://medium.freecodecamp.org/tmux-in-practice-series-of-posts-ae34f16cfab0)
 
