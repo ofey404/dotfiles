@@ -4,5 +4,5 @@
 curl -L https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh | sh
 
 mv ~/.zshrc ~/.zshrc.backup
-stow vim
-stow zsh
+stow ./vim
+stow ./zsh
