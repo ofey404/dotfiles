@@ -3,6 +3,9 @@
 # install oh-my-zsh
 curl -L https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh | sh
 
-mv ~/.zshrc ~/.zshrc.backup
+if [ -f "$HOME/.zshrc" ] ; then
+  mv ~/.zshrc ~/.zshrc.backup
+fi
+
 stow vim
 stow zsh

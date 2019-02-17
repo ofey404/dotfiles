@@ -34,7 +34,7 @@ wget https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - 
 
 https://githubhttps://github.com/samoshkin/tmux-config#copy-mode.com/samoshkin/tmux-config#copy-mode
 
-this bro has made a great hack.
+this bro has made a great hack. This is his article: [tmux in pracitce](https://medium.freecodecamp.org/tmux-in-practice-series-of-posts-ae34f16cfab0)
 
 learn how to add the project as a submodule, and add this as a submodule of my dot file
 
@@ -52,3 +52,7 @@ stow -d $HOME/.dotfiles -t $home git
 
 ```bash
 XKBOPTIONS="ctrl:nocaps"
+```
+## references
+
+about how to manage dotfiles with GNU stow [Using GNU Stow to manage your dotfiles(Chinese translation)](https://farseerfc.me/zhs/using-gnu-stow-to-manage-your-dotfiles.html)
