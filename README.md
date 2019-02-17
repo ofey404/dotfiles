@@ -1,8 +1,15 @@
 # Manage Linux Configuration Files Properly
 
-## installation guide
+## install
 
-### requirements:
+install vim zsh tmux autojump stow by package manager
+
+```shell
+git clone --recursive git@github.com:ofey404/dotfiles.git .dotfiles
+~/.dotfiles/init.sh
+```
+
+## requirements:
 
 in apt repo: zsh, tmux, vim, autojump
 
