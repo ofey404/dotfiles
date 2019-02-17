@@ -12,7 +12,8 @@ then execute:
 
 ```shell
 git clone --recursive git@github.com:ofey404/dotfiles.git .dotfiles
-~/.dotfiles/init.sh  # for default installation
+cd .dotfiles
+./init.sh  # for default installation, init.sh could only run in directory .dotfiles
 ```
 
 ## requirements:
