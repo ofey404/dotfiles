@@ -11,7 +11,7 @@ sudo apt-get install vim zsh tmux autojump stow
 then execute:
 
 ```shell
-git clone --recursive git@github.com:ofey404/dotfiles.git .dotfiles
+git clone --recursive https://github.com/ofey404/dotfiles.git .dotfiles
 cd .dotfiles
 ./init.sh  # for default installation, init.sh could only run in directory .dotfiles
 ```
