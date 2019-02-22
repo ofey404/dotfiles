@@ -8,7 +8,13 @@
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME="robbyrussell"
+if [[ -n $SSH_CONNECTION ]]; then
+  ZSH_THEME="af-magic"
+else
+  ZSH_THEME="robbyrussell"
+fi
+
+
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -74,17 +80,21 @@ source $ZSH/oh-my-zsh.sh
 # export LANG=en_US.UTF-8
 
 # Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
-# else
-#   export EDITOR='mvim'
-# fi
+if [[ -n $SSH_CONNECTION ]]; then
+  export EDITOR='vim'
+else
+  export EDITOR='vim'
+fi
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
 
 # ssh
 # export SSH_KEY_PATH="~/.ssh/rsa_id"
+
+# proxy
+# export http_proxy="http://127.0.0.1:12333"
+# export https_proxy="http://127.0.0.1:12333"
 
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
@@ -96,6 +106,8 @@ alias zshconfig="vim ~/.zshrc"
 alias ohmyzsh="vim ~/.oh-my-zsh"
 alias docker_arch="docker run -it archlinux/base"
 alias docker_cent="docker run -it centos"
+alias g="http_proxy=http://127.0.0.1:12333 https_proxy=http://127.0.0.1:12333 BROWSER=w3m googler -n 5"
+alias mx="tmuxinator"
 
 # for activate autojump
 . /usr/share/autojump/autojump.sh
