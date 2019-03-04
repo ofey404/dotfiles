@@ -108,6 +108,14 @@ alias docker_arch="docker run -it archlinux/base"
 alias docker_cent="docker run -it centos"
 alias g="http_proxy=http://127.0.0.1:12333 https_proxy=http://127.0.0.1:12333 BROWSER=w3m googler -n 5"
 alias mx="tmuxinator"
+alias -s html='vim'
+alias -s js='vim'
+alias -s c='vim'
+alias -s java='vim'
+alias -s txt='vim'
+alias -s gz='tar -xzvf'
+alias -s pdf='okular' 
+alias -s vim='vim -p'
 
 # for activate autojump
 . /usr/share/autojump/autojump.sh
