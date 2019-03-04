@@ -2,7 +2,7 @@
 
 ## install
 
-**install vim zsh tmux autojump stow by package manager**
+install vim zsh tmux autojump stow by package manager
 
 ```shell
 sudo apt-get install vim zsh tmux autojump stow
@@ -16,7 +16,7 @@ cd .dotfiles
 ./init.sh  # for default installation, init.sh could only run in directory .dotfiles
 ```
 
-## requirements:
+## requirements
 
 in apt repo: zsh, tmux, vim, autojump
 
@@ -32,7 +32,7 @@ wget https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - 
 
 ## use a exist tmux conf
 
-https://github.com/samoshkin/tmux-config#copy-mode.com/samoshkin/tmux-config#copy-mode
+[conf link](https://github.com/samoshkin/tmux-config#copy-mode.com/samoshkin/tmux-config#copy-mode)
 
 this bro has made a great hack. This is his article: [tmux in pracitce](https://medium.freecodecamp.org/tmux-in-practice-series-of-posts-ae34f16cfab0)
 
@@ -53,6 +53,7 @@ stow -d $HOME/.dotfiles -t $home git
 ```bash
 XKBOPTIONS="ctrl:nocaps"
 ```
+
 ## references
 
 about how to manage dotfiles with GNU stow [Using GNU Stow to manage your dotfiles(Chinese translation)](https://farseerfc.me/zhs/using-gnu-stow-to-manage-your-dotfiles.html)
