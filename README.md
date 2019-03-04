@@ -4,6 +4,8 @@
 
 install vim zsh tmux autojump stow by package manager
 
+xsel if want to commuincate tmux clipboard with host
+
 ```shell
 sudo apt-get install vim zsh tmux autojump stow
 ```
@@ -15,6 +17,10 @@ git clone --recursive https://github.com/ofey404/dotfiles.git .dotfiles
 cd .dotfiles
 ./init.sh  # for default installation, init.sh could only run in directory .dotfiles
 ```
+
+### about clipboard
+
+[this plugin](https://github.com/wincent/clipper) might be useful. If i have time to play with.
 
 ## requirements
 
