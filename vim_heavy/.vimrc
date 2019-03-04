@@ -30,6 +30,8 @@ Plugin 'tpope/vim-repeat'
 Plugin 'lilydjwg/fcitx.vim'
 Plugin 'Lokaltog/vim-easymotion'
 Plugin 'Valloric/YouCompleteMe'
+Plugin 'morhetz/gruvbox'
+Plugin 'vim-airline/vim-airline'
 
 " plugin from http://vim-scripts.org/vim/scripts.html
 " Plugin 'L9'
@@ -59,3 +61,4 @@ filetype plugin indent on    " required
 " see :h vundle for more details or wiki for FAQ
 " Put your non-Plugin stuff after this line
 
+colorscheme gruvbox "设置主题为 gruvbox
