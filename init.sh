@@ -1,9 +1,10 @@
 # install git neovim zsh tmux autojump stow by package manager
 
-# install oh-my-zsh
-curl -L https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh | sh
-
-if [ -f "$HOME/.zshrc" ] ; then
-  mv ~/.zshrc ~/.zshrc.backup
+if [ -e "$HOME/.zshrc" ] ; then
+  printf "Found existing .zshrc in your \$HOME dir, Will create a backup at $HOME/..zshrc.bak\n"
 fi
 
+cp -f "$HOME/.zshrc" "$HOME/.zshrc.bak" 2>/dev/null || true
+
+# install vundle
+git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
