@@ -12,5 +12,4 @@ ln -sf ./external/oh-my-zsh "$HOME"/.oh-my-zsh
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 
 # install tmux.conf
-cd ./external
-./install.sh
+./tmux-config/install.sh
