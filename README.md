@@ -22,6 +22,14 @@ cd .dotfiles
 
 [this plugin](https://github.com/wincent/clipper) might be useful. If i have time to play with.
 
+### Keyboard modification
+
+add in /etc/default/keyboard:
+
+```shell
+XKBOPTIONS="ctrl:nocaps"
+```
+
 ## requirements
 
 in apt repo: zsh, tmux, vim, autojump
