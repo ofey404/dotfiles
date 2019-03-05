@@ -1,11 +1,28 @@
 imap jk <Esc>
 imap kj <Esc>
 
-set nu
-set autoindent
+set rnu
+set smartindent
+set tabstop=4
 set mouse=a
 syntax on
 set timeoutlen=1000 ttimeoutlen=0
+hi Normal ctermfg=252 ctermbg=none
+set sm  "括号匹配短暂显示
+set matchtime=1
+
+"----- split mapping -------
+nmap <c-j> <c-w>j
+nmap <c-k> <c-w>k
+nmap <c-h> <c-w>h
+nmap <c-l> <c-w>l
+
+
+"----- nerdtree mapping -------
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+nmap ,d :NERDTreeToggle<CR>
+
 
 "##### plugins  ###########
 
@@ -27,9 +44,13 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-repeat'
-" Plugin 'lilydjwg/fcitx.vim'
+"Plugin 'lilydjwg/fcitx.vim'
 Plugin 'Lokaltog/vim-easymotion'
-" Plugin 'Valloric/YouCompleteMe'
+"Plugin 'Valloric/YouCompleteMe'
+Plugin 'morhetz/gruvbox'
+Plugin 'vim-airline/vim-airline'
+Plugin 'scrooloose/nerdtree'
+Plugin 'Raimondi/delimitMate'
 
 " plugin from http://vim-scripts.org/vim/scripts.html
 " Plugin 'L9'
@@ -59,3 +80,6 @@ filetype plugin indent on    " required
 " see :h vundle for more details or wiki for FAQ
 " Put your non-Plugin stuff after this line
 
+"about theme
+set bg=dark
+"colorscheme gruvbox "设置主题为 gruvbox

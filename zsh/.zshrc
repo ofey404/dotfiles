@@ -117,5 +117,11 @@ alias -s gz='tar -xzvf'
 alias -s pdf='okular' 
 alias -s vim='vim -p'
 
+## for conda path
+export PATH="/home/$USER/Programs/anaconda3/bin:$PATH"
+
+/home/ofey/Programs/anaconda3/etc/profile.d/conda.sh
+
+
 # for activate autojump
 . /usr/share/autojump/autojump.sh

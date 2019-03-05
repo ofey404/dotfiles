@@ -2,11 +2,14 @@ imap jk <Esc>
 imap kj <Esc>
 
 set rnu
-set autoindent
+set smartindent
+set tabstop=4
 set mouse=a
 syntax on
 set timeoutlen=1000 ttimeoutlen=0
 hi Normal ctermfg=252 ctermbg=none
+set sm  "括号匹配短暂显示
+set matchtime=1
 
 "----- split mapping -------
 nmap <c-j> <c-w>j
@@ -41,12 +44,13 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-repeat'
-"Plugin 'lilydjwg/fcitx.vim'
+Plugin 'lilydjwg/fcitx.vim'
 Plugin 'Lokaltog/vim-easymotion'
-"Plugin 'Valloric/YouCompleteMe'
+Plugin 'Valloric/YouCompleteMe'
 Plugin 'morhetz/gruvbox'
 Plugin 'vim-airline/vim-airline'
 Plugin 'scrooloose/nerdtree'
+Plugin 'Raimondi/delimitMate'
 
 " plugin from http://vim-scripts.org/vim/scripts.html
 " Plugin 'L9'
@@ -76,6 +80,10 @@ filetype plugin indent on    " required
 " see :h vundle for more details or wiki for FAQ
 " Put your non-Plugin stuff after this line
 
-"about theme
+" about theme
 set bg=dark
-colorscheme gruvbox "设置主题为 gruvbox
+"colorscheme gruvbox "设置主题为 gruvbox
+
+" YCM
+let g:ycm_server_python_interpreter='/usr/bin/python'
+let g:ycm_global_ycm_extra_conf='~/.vim/.ycm_extra_conf.py'
