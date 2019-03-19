@@ -2,12 +2,15 @@
 
 ## install
 
-install vim zsh tmux autojump stow by package manager
+install vim zsh tmux stow by package manager
 
 xsel if want to commuincate tmux clipboard with host
 
+powerline font if want to have a better apperance of tmux
+
 ```shell
-sudo apt-get install vim zsh tmux autojump stow
+sudo apt-get install vim zsh tmux xsel stow
+sudo apt-get install fonts-powerline
 ```
 
 then execute:
@@ -17,6 +20,10 @@ git clone --recursive https://github.com/ofey404/dotfiles.git .dotfiles
 cd .dotfiles
 ./init.sh  # for default installation, init.sh could only run in directory .dotfiles
 ```
+
+then use stow to extract dotfiles you want.
+
+run chsh to change shell to zsh
 
 ### about clipboard
 

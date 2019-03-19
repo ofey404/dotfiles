@@ -118,10 +118,9 @@ alias -s pdf='okular'
 alias -s vim='vim -p'
 
 ## for conda path
-export PATH="/home/$USER/Programs/anaconda3/bin:$PATH"
+# export PATH="/home/$USER/Programs/anaconda3/bin:$PATH"
 
-/home/ofey/Programs/anaconda3/etc/profile.d/conda.sh
+# /home/ofey/Programs/anaconda3/etc/profile.d/conda.sh
 
 
 # for activate autojump
-. /usr/share/autojump/autojump.sh
