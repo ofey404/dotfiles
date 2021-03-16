@@ -20,28 +20,24 @@ export PATH
 source /usr/share/fzf/shell/key-bindings.bash
 source /etc/bash_completion.d/fzf
 source /opt/gitstatus/gitstatus.prompt.sh
+source ~/.secret/secretrc
 
 export NOTES_CLI_HOME=/home/ofey/Documents/Notes
 export FZF_DEFAULT_COMMAND='rg --files'
 export NOTES_CLI_EDITOR=nvim
-
 export EDITOR=nvim
 export VISUAL=nvim
-
 export VIRTUALENVWRAPPER_SCRIPT=/home/ofey/.local/bin/virtualenvwrapper.sh
-
 export WORKON_HOME=/home/ofey/.virtualenvs
-
 export USER=ofey
 export VIRTUALENVWRAPPER_PROJECT_FILENAME=.project
 export PATH="/home/ofey/.go-tpc/bin:/home/ofey/.go-tpc/bin:/home/ofey/.local/bin:/home/ofey/.tiup/bin:/home/ofey/.go-tpc/bin:/home/ofey/.cargo/bin:/usr/lib64/ccache:/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin:/var/lib/snapd/snap/bin"
-
-
+export FZF_COMPLETION_TRIGGER=','
 export VIRTUALENVWRAPPER_HOOK_DIR=/home/ofey/.virtualenvs
+export PATH=$PATH:/usr/local/go/bin
+export FZF_COMPLETION_TRIGGER=','
 
-export GOPATH=~/go
-export GOROOT=/usr/bin/go
-
+unset GOROOT
 
 alias NetAuth='python ~/misc/NetAuth.py'
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
@@ -71,15 +67,14 @@ alias tr='todo remove'
 alias typora='/opt/typora/Typora'
 alias vim='nvim'
 alias which='(alias; declare -f) | /usr/bin/which --tty-only --read-alias --read-functions --show-tilde --show-dot'
-
 alias xzegrep='xzegrep --color=auto'
 alias xzfgrep='xzfgrep --color=auto'
 alias xzgrep='xzgrep --color=auto'
 alias zegrep='zegrep --color=auto'
 alias zfgrep='zfgrep --color=auto'
 alias zgrep='zgrep --color=auto'
-
-
+alias p='proxychains'
+alias lastcmd='history | tail -n 2 | head -n 1 | sed "s/ *[0-9]* //"'
 
 counter () 
 { 
@@ -132,4 +127,18 @@ unproxy ()
     unset HTTPS_PROXY
 }
 
+function_exists ()
+{
+    declare -f -F $1 > /dev/null
+    return $?
+}
+
+for al in `__git_aliases`; do
+    alias g$al="git $al"
+    
+    complete_func=_git_$(__git_aliased_command $al)
+    function_exists $complete_fnc && __git_complete g$al $complete_func
+done
+
 bind -x '"\C-x\C-x": pet-select'
+
