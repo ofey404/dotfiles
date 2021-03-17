@@ -1,9 +1,0 @@
-[submodule "tmux-config"]
-	path = tmux-config
-	url = https://github.com/ofey404/tmux-config.git
-[submodule "external/oh-my-zsh"]
-	path = external/oh-my-zsh
-	url = https://github.com/robbyrussell/oh-my-zsh.git
-[submodule "dotfiles"]
-	path = dotfiles
-	url = https://github.com/ofey404/dotfiles.git

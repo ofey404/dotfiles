@@ -1,1 +1,0 @@
-vim/heavy/.vimrc
