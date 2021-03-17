@@ -9,6 +9,10 @@ set nu rnu
 set mouse=a
 set history=1000                " Store a ton of history (default is 20)
 
+" RC per project directory
+set exrc
+set secure
+
 " Tabs
 set tabstop=4
 set shiftwidth=4
@@ -96,14 +100,20 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " For FZF
 Plug 'junegunn/fzf.vim'
 
-Plug 'preservim/nerdtree'
-Plug 'tpope/vim-surround'  " For surrounding detect of \"\" or ''
+Plug 'justinmk/vim-sneak'
 
-Plug 'KabbAmine/zeavim.vim'  " For zeal integration
+Plug 'preservim/nerdtree'
+
+Plug 'preservim/nerdcommenter'
+
+Plug 'airblade/vim-gitgutter'
+
+Plug 'tpope/vim-surround'  " For surrounding detect of \"\" or ''
 
 Plug 'cespare/vim-toml'
 
 Plug 'vim-airline/vim-airline'
+
 Plug 'vim-airline/vim-airline-themes'
 
 Plug 'rhysd/vim-notes-cli'
@@ -121,9 +131,13 @@ call plug#end()
 nmap <C-p> :w<CR>:Files<CR>
 nmap <C-e> :Buffers<CR>
 nnoremap <C-t> :Rg<CR>
+nnoremap <leader>m :Marks<CR>
 let g:fzf_action = { 'ctrl-e': 'edit' }
 
 nnoremap <C-b> :NERDTreeToggle<CR>
+
+nmap <leader>/   <Plug>NERDCommenterToggle
+vmap <leader>/   <Plug>NERDCommenterToggle<CR>gv
 
 nmap <leader>z <Plug>Zeavim
 vmap <leader>z <Plug>ZVVisSelection
