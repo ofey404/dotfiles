@@ -83,7 +83,6 @@ alias p='proxychains'
 alias lastcmd='history | tail -n 2 | head -n 1 | sed "s/ *[0-9]* //"'
 alias t='firefox --new-tab'
 alias man='moreman'
-alias g='gitui'
 
 
 counter () 
@@ -159,5 +158,7 @@ bind -x '"\C-x\C-r": stash'
 bind -x '"\C-x\C-x": pet-select'
 stty kill undef
 bind -x '"\C-u": cut-to-system'
+bind -x '"\C-g": gitui'
+
 
 
