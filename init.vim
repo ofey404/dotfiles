@@ -136,13 +136,15 @@ let g:fzf_action = { 'ctrl-e': 'edit' }
 
 nnoremap <C-b> :NERDTreeToggle<CR>
 
-nmap <leader>/   <Plug>NERDCommenterToggle
-vmap <leader>/   <Plug>NERDCommenterToggle<CR>gv
-
 nmap <leader>z <Plug>Zeavim
 vmap <leader>z <Plug>ZVVisSelection
 nmap gz <Plug>ZVOperator
 nmap <leader><leader>z <Plug>ZVKeyDocset
+
+" ============== NERD Commenter =====================
+let NERDSpaceDelims=1
+nmap <leader>/   <Plug>NERDCommenterToggle
+vmap <leader>/   <Plug>NERDCommenterToggle<CR>gv
 
 " ============== fzf ================================
 

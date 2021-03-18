@@ -17,10 +17,11 @@ export PATH
 
 # User specific aliases and functions
 
-source /usr/share/fzf/shell/key-bindings.bash
-source /etc/bash_completion.d/fzf
-source /opt/gitstatus/gitstatus.prompt.sh
-source ~/.secret/secretrc
+[[ -f /usr/share/fzf/shell/key-bindings.bash ]] && source /usr/share/fzf/shell/key-bindings.bash
+[[ -f /etc/bash_completion.d/fzf ]] && source /etc/bash_completion.d/fzf
+[[ -f /opt/gitstatus/gitstatus.prompt.sh ]] && source /opt/gitstatus/gitstatus.prompt.sh
+[[ -f /.secret/secretrc ]] && source ~/.secret/secretrc
+[[ -f /etc/profile.d/autojump.sh ]] && source /etc/profile.d/autojump.sh
 
 export NOTES_CLI_HOME=/home/ofey/Documents/Notes
 export FZF_DEFAULT_COMMAND='rg --files'
@@ -36,6 +37,10 @@ export FZF_COMPLETION_TRIGGER=','
 export VIRTUALENVWRAPPER_HOOK_DIR=/home/ofey/.virtualenvs
 export PATH=$PATH:/usr/local/go/bin
 export FZF_COMPLETION_TRIGGER=','
+export HISTSIZE=-1
+export HISTFILESIZE=-1
+export LESS='--quit-if-one-screen --ignore-case --status-column --LONG-PROMPT --RAW-CONTROL-CHARS --HILITE-UNREAD --tabs=4 --no-init --window=-4'
+export PAGER="nvimpager"
 
 unset GOROOT
 
@@ -75,6 +80,9 @@ alias zfgrep='zfgrep --color=auto'
 alias zgrep='zgrep --color=auto'
 alias p='proxychains'
 alias lastcmd='history | tail -n 2 | head -n 1 | sed "s/ *[0-9]* //"'
+alias t='firefox --new-tab'
+alias man='moreman'
+
 
 counter () 
 { 
@@ -126,7 +134,8 @@ unproxy ()
     unset HTTP_PROXY;
     unset HTTPS_PROXY
 }
-stash () {
+stash ()
+{
 	if [[ -z "$LAST_STASHED_LINE" ]]
 	then
 		LAST_STASHED_LINE=$READLINE_LINE
@@ -138,7 +147,15 @@ stash () {
 		echo "## Stash poped ##"
 	fi
 }
+cut-to-system ()
+{
+    echo "$READLINE_LINE" | xclip -selection clipboard
+    READLINE_LINE=""
+}
 
 bind -x '"\C-x\C-r": stash'
 bind -x '"\C-x\C-x": pet-select'
+stty kill undef
+bind -x '"\C-u": cut-to-system'
+
 
