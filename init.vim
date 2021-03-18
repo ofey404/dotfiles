@@ -32,15 +32,15 @@ set wildmode=list:longest,full  " command <Tab> completion, list matches, then l
 " Fold text
 set foldmethod=syntax
 set foldlevelstart=5
-set foldtext=MyFoldText()
-function! MyFoldText()
-    let nblines = v:foldend - v:foldstart + 1
-    let w = winwidth(0) - &foldcolumn - (&number ? 8 : 0)
-    let line = getline(v:foldstart)
-    let comment = substitute(line, '/\*\|\*/\|{{{\d\=', '', 'g')
-    let txt = comment . ' >>> folded ' . nblines . ' lines'
-    return txt
-endfunction
+" set foldtext=MyFoldText()
+" function! MyFoldText()
+    " let nblines = v:foldend - v:foldstart + 1
+    " let w = winwidth(0) - &foldcolumn - (&number ? 8 : 0)
+    " let line = getline(v:foldstart)
+    " let comment = substitute(line, '/\*\|\*/\|{{{\d\=', '', 'g')
+    " let txt = comment . ' >>> folded ' . nblines . ' lines'
+    " return txt
+" endfunction
 
 " Space as leader
 nnoremap <SPACE> <Nop>

@@ -33,6 +33,7 @@ export WORKON_HOME=/home/ofey/.virtualenvs
 export USER=ofey
 export VIRTUALENVWRAPPER_PROJECT_FILENAME=.project
 export PATH="/home/ofey/.go-tpc/bin:/home/ofey/.go-tpc/bin:/home/ofey/.local/bin:/home/ofey/.tiup/bin:/home/ofey/.go-tpc/bin:/home/ofey/.cargo/bin:/usr/lib64/ccache:/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin:/var/lib/snapd/snap/bin"
+export PATH="$PATH:/home/ofey/go/bin"
 export FZF_COMPLETION_TRIGGER=','
 export VIRTUALENVWRAPPER_HOOK_DIR=/home/ofey/.virtualenvs
 export PATH=$PATH:/usr/local/go/bin
@@ -135,27 +136,13 @@ unproxy ()
     unset HTTP_PROXY;
     unset HTTPS_PROXY
 }
-stash ()
-{
-	if [[ -z "$LAST_STASHED_LINE" ]]
-	then
-		LAST_STASHED_LINE=$READLINE_LINE
-		echo "## Pushed $LAST_STASHED_LINE ##"
-		READLINE_LINE=""
-	else
-		READLINE_LINE=$LAST_STASHED_LINE
-		unset LAST_STASHED_LINE
-		echo "## Stash poped ##"
-	fi
-}
 cut-to-system ()
 {
     echo "$READLINE_LINE" | xclip -selection clipboard
     READLINE_LINE=""
 }
 
-bind -x '"\C-x\C-r": stash'
-bind -x '"\C-x\C-x": pet-select'
+bind -x '"\C-x": pet-select'
 stty kill undef
 bind -x '"\C-u": cut-to-system'
 bind -x '"\C-g": gitui'
