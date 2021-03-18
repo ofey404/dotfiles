@@ -8,6 +8,7 @@ set spelllang=en,cjk
 set nu rnu
 set mouse=a
 set history=1000                " Store a ton of history (default is 20)
+set cursorline
 
 " RC per project directory
 set exrc
