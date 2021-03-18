@@ -135,12 +135,20 @@ nnoremap <C-t> :Rg<CR>
 nnoremap <leader>m :Marks<CR>
 let g:fzf_action = { 'ctrl-e': 'edit' }
 
-nnoremap <C-b> :NERDTreeToggle<CR>
+" ============== NERDTree ===========================
+function! IsNerdTreeEnabled()
+    return exists('t:NERDTreeBufName') && bufwinnr(t:NERDTreeBufName) != -1
+endfunction
 
-nmap <leader>z <Plug>Zeavim
-vmap <leader>z <Plug>ZVVisSelection
-nmap gz <Plug>ZVOperator
-nmap <leader><leader>z <Plug>ZVKeyDocset
+function! ToggleNerdTreeFocusCurrentFile()
+    if IsNerdTreeEnabled()
+        NERDTreeToggle
+    else
+        NERDTreeFind
+    endif
+endfunction
+
+nnoremap <C-b> :call ToggleNerdTreeFocusCurrentFile()<CR>
 
 " ============== NERD Commenter =====================
 let NERDSpaceDelims=1

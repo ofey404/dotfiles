@@ -83,6 +83,7 @@ alias p='proxychains'
 alias lastcmd='history | tail -n 2 | head -n 1 | sed "s/ *[0-9]* //"'
 alias t='firefox --new-tab'
 alias man='moreman'
+alias g='gitui'
 
 
 counter () 
