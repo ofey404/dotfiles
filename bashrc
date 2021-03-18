@@ -142,7 +142,8 @@ cut-to-system ()
     READLINE_LINE=""
 }
 
-bind -x '"\C-x": pet-select'
+stty stop undef
+bind -x '"\C-s": pet-select'
 stty kill undef
 bind -x '"\C-u": cut-to-system'
 bind -x '"\C-g": gitui'
