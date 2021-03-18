@@ -143,24 +143,12 @@ kill-to-system ()
     echo "$READLINE_LINE" | $SYSTEM_CLIPBOARD_COMMAND
     READLINE_LINE=""
 }
-werase-to-system ()
-{
-	arr=($READLINE_LINE)
-	if [[ ${#arr[@]} -ge 1 ]]
-	then
-		echo ${arr[-1]} | $SYSTEM_CLIPBOARD_COMMAND
-		unset arr[-1]
-		READLINE_LINE=`echo ${arr[@]}`
-	fi
-}
+
 
 stty stop undef
 bind -x '"\C-s": pet-select'
 stty kill undef
 bind -x '"\C-u": kill-to-system'
-stty werase undef
-bind -x '"\C-w": werase-to-system'
 bind -x '"\C-g": gitui'
-
 
 
