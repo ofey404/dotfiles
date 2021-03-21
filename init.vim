@@ -32,15 +32,6 @@ set wildmode=list:longest,full  " command <Tab> completion, list matches, then l
 " Fold text
 set foldmethod=syntax
 set foldlevelstart=5
-" set foldtext=MyFoldText()
-" function! MyFoldText()
-    " let nblines = v:foldend - v:foldstart + 1
-    " let w = winwidth(0) - &foldcolumn - (&number ? 8 : 0)
-    " let line = getline(v:foldstart)
-    " let comment = substitute(line, '/\*\|\*/\|{{{\d\=', '', 'g')
-    " let txt = comment . ' >>> folded ' . nblines . ' lines'
-    " return txt
-" endfunction
 
 " Space as leader
 nnoremap <SPACE> <Nop>
@@ -68,12 +59,13 @@ function! Term_toggle(height)
     if win_gotoid(g:term_win)
         hide
     else
+        let g:__VIM_TERM_DIR=expand('%:p:h')
         botright new
         exec "resize " . a:height
         try
             exec "buffer " . g:term_buf
         catch
-            call termopen($SHELL, {"detach": 0})
+            call termopen($SHELL, {"detach": 0, "cwd": g:__VIM_TERM_DIR})
             let g:term_buf = bufnr("")
         endtry
         startinsert!
@@ -81,8 +73,8 @@ function! Term_toggle(height)
     endif
 endfunction
 
-nnoremap <C-j> :call Term_toggle(10)<cr>
-tnoremap <C-j> <C-\><C-n>:call Term_toggle(10)<cr>
+nnoremap <F12> :call Term_toggle(10)<cr>
+tnoremap <F12> <C-\><C-n>:call Term_toggle(10)<cr>
 
 " ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 " Config above should work on a vim without plugin
@@ -119,7 +111,11 @@ Plug 'vim-airline/vim-airline-themes'
 
 Plug 'rhysd/vim-notes-cli'
 
+Plug 'inkarkat/vim-CursorLineCurrentWindow'
+
 Plug 'rlue/vim-barbaric'
+
+Plug 'itspriddle/vim-shellcheck'
 
 " For github style markdown highlight
 Plug 'godlygeek/tabular'
@@ -211,6 +207,7 @@ let g:fzf_colors =
 "   'previous-history' instead of 'down' and 'up'.
 " let g:fzf_history_dir = '~/.local/share/fzf-history'
 
+" ======================== coc ============================================
 " =========== From https://github.com/neoclide/coc.nvim ===================
 " TextEdit might fail if hidden is not set.
 set hidden
@@ -377,4 +374,3 @@ nnoremap <silent><nowait> <leader>j  :<C-u>CocNext<CR>
 nnoremap <silent><nowait> <leader>k  :<C-u>CocPrev<CR>
 " Resume latest coc list.
 nnoremap <silent><nowait> <leader>p  :<C-u>CocListResume<CR>
-

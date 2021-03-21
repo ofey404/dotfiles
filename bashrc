@@ -1,3 +1,4 @@
+#!/bin/bash
 # .bashrc
 
 # Source global definitions
@@ -17,8 +18,7 @@ export PATH
 
 # User specific aliases and functions
 
-[[ -f /usr/share/fzf/shell/key-bindings.bash ]] && source /usr/share/fzf/shell/key-bindings.bash
-[[ -f /etc/bash_completion.d/fzf ]] && source /etc/bash_completion.d/fzf
+[[ -f /usr/share/fzf/shell/key-bindings.bash ]] && source /usr/share/fzf/shell/key-bindings.bash [[ -f /etc/bash_completion.d/fzf ]] && source /etc/bash_completion.d/fzf
 [[ -f /opt/gitstatus/gitstatus.prompt.sh ]] && source /opt/gitstatus/gitstatus.prompt.sh
 [[ -f /.secret/secretrc ]] && source ~/.secret/secretrc
 [[ -f /etc/profile.d/autojump.sh ]] && source /etc/profile.d/autojump.sh
@@ -84,6 +84,7 @@ alias p='proxychains'
 alias lastcmd='history | tail -n 2 | head -n 1 | sed "s/ *[0-9]* //"'
 alias t='firefox --new-tab'
 alias man='moreman'
+alias s='source .env'
 
 
 SYSTEM_CLIPBOARD_COMMAND='xclip -selection clipboard'
@@ -100,9 +101,9 @@ counter ()
 }
 go_playground () 
 { 
-    mkdir -p $1_playground;
-    cd $1_playground;
-    go mod init ofey404/$1_playground;
+    mkdir -p "$1"_playground;
+    cd "$1"_playground;
+    go mod init ofey404/"$1"_playground;
     nvim main.go
 }
 notes_new_in_exist_category () 
