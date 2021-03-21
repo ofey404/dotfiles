@@ -19,7 +19,9 @@ export PATH
 # User specific aliases and functions
 
 [[ -f /usr/share/fzf/shell/key-bindings.bash ]] && source /usr/share/fzf/shell/key-bindings.bash [[ -f /etc/bash_completion.d/fzf ]] && source /etc/bash_completion.d/fzf
-[[ -f /opt/gitstatus/gitstatus.prompt.sh ]] && source /opt/gitstatus/gitstatus.prompt.sh
+# [[ -f /opt/gitstatus/gitstatus.prompt.sh ]] && source /opt/gitstatus/gitstatus.prompt.sh
+[[ $- == *i* ]] && source /home/ofey/.local/share/blesh/ble.sh --noattach
+# [[ -f /opt/ble-0.3.3/ble.sh  ]] && source /opt/ble-0.3.3/ble.sh
 [[ -f /.secret/secretrc ]] && source ~/.secret/secretrc
 [[ -f /etc/profile.d/autojump.sh ]] && source /etc/profile.d/autojump.sh
 
@@ -48,8 +50,7 @@ unset GOROOT
 
 alias NetAuth='python ~/misc/NetAuth.py'
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
-alias c='code'
-alias clipboard='xclip -selection clipboard'
+alias c='xclip -selection clipboard'
 alias egrep='egrep --color=auto'
 alias f='firefox --new-tab'
 alias fgrep='fgrep --color=auto'
@@ -72,7 +73,6 @@ alias ta='todo add'
 alias tl='todo list'
 alias tr='todo remove'
 alias typora='/opt/typora/Typora'
-alias vim='nvim'
 alias which='(alias; declare -f) | /usr/bin/which --tty-only --read-alias --read-functions --show-tilde --show-dot'
 alias xzegrep='xzegrep --color=auto'
 alias xzfgrep='xzfgrep --color=auto'
@@ -153,3 +153,4 @@ bind -x '"\C-u": kill-to-system'
 bind -x '"\C-g": gitui'
 
 
+[[ ${BLE_VERSION-} ]] && ble-attach
