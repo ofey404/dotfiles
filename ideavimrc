@@ -1,0 +1,17 @@
+imap jk <ESC>
+set clipboard=unnamed,unnamedplus
+set nohlsearch
+set nu rnu
+set sneak
+
+nnoremap <SPACE> <Nop>
+let mapleader=" "
+
+nnoremap <C-J> <C-W>j
+nnoremap <C-K> <C-W>k
+nnoremap <C-L> <C-W>l
+nnoremap <C-H> <C-W>h
+
+nnoremap , <C-w>
+nnoremap ,c :q<CR>
+set clipboard+=ideaput

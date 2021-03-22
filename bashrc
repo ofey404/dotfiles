@@ -152,5 +152,6 @@ stty kill undef
 bind -x '"\C-u": kill-to-system'
 bind -x '"\C-g": gitui'
 
+[[ $- == *i* ]] && fortune
 
 [[ ${BLE_VERSION-} ]] && ble-attach
