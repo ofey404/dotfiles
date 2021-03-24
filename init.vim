@@ -90,6 +90,8 @@ call plug#begin()
 " COC: Use release branch (recommend)
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
+Plug 'google/vim-jsonnet'
+
 " For FZF
 Plug 'junegunn/fzf.vim'
 

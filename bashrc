@@ -42,6 +42,7 @@ export PATH=$PATH:/usr/local/go/bin
 export FZF_COMPLETION_TRIGGER=','
 export HISTSIZE=-1
 export HISTFILESIZE=-1
+export HISTCONTROL=ignoredups:erasedups  # no duplicate entries
 export LESS='--quit-if-one-screen --ignore-case --status-column --LONG-PROMPT --RAW-CONTROL-CHARS --HILITE-UNREAD --tabs=4 --no-init --window=-4'
 export PAGER="nvimpager"
 export FZF_CTRL_T_OPTS="--preview 'bat --style=numbers --color=always --line-range :500 {}'"
@@ -85,6 +86,7 @@ alias lastcmd='history | tail -n 2 | head -n 1 | sed "s/ *[0-9]* //"'
 alias t='firefox --new-tab'
 alias man='moreman'
 alias s='source .env'
+alias info='info --vi-key'
 
 
 SYSTEM_CLIPBOARD_COMMAND='xclip -selection clipboard'
@@ -144,6 +146,15 @@ kill-to-system ()
     echo "$READLINE_LINE" | $SYSTEM_CLIPBOARD_COMMAND
     READLINE_LINE=""
 }
+open-in-nvim () 
+{ 
+    if [[ -z "$READLINE_LINE" ]]
+    then
+      READLINE_LINE="nvim "
+    else
+      READLINE_LINE="nvim $READLINE_LINE"
+    fi
+}
 
 
 stty stop undef
@@ -151,6 +162,12 @@ bind -x '"\C-s": pet-select'
 stty kill undef
 bind -x '"\C-u": kill-to-system'
 bind -x '"\C-g": gitui'
+bind -x '"\C-f": ranger'
+bind -x '"\C-i": open-in-nvim'
+
+
+
+shopt -s histappend                      # append to history, don't overwrite it
 
 [[ $- == *i* ]] && fortune
 
