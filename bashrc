@@ -150,7 +150,10 @@ open-in-nvim ()
 { 
     if [[ -z "$READLINE_LINE" ]]
     then
-      READLINE_LINE="nvim "
+      if f=$(fzf)
+      then
+        nvim $f
+      fi
     else
       READLINE_LINE="nvim $READLINE_LINE"
     fi
