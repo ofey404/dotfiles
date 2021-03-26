@@ -70,9 +70,9 @@ alias l.='ls -d .* --color=auto'
 alias la='ls -A'
 alias ll='ls -alF'
 alias ls='ls --color=auto'
-alias ne='notes_open_category'
-alias nn='notes_new_in_exist_category'
-alias nr='notes list --sort modified | fzf | xargs -o nvim '
+alias ne='notes-open-category'
+alias nn='notes-new-in-exist-category'
+alias nr='notes-open-recent'
 alias ns='notes save'
 alias pafd='cd ~/Code/pafd-automated/ ; python main.py'
 alias remote='xfreerdp +window-drag +clipboard /u:Administrator /p:Co299792458 /v:106.15.249.201 /dynamic-resolution 2>&1 >> ~/misc/log/remote.log'
@@ -107,20 +107,19 @@ counter ()
         fi;
     done
 }
-go_playground () 
-{ 
-    mkdir -p "$1"_playground;
-    cd "$1"_playground;
-    go mod init ofey404/"$1"_playground;
-    nvim main.go
-}
-notes_new_in_exist_category () 
+notes-new-in-exist-category () 
 { 
     notes new $(counter $NOTES_CLI_HOME | fzf) $1
 }
-notes_open_category () 
+notes-open-category () 
 { 
     notes list | fzf --height 40% --layout=reverse --preview 'cat {} 2> /dev/null | head -500' | xargs -o $NOTES_CLI_EDITOR
+}
+notes-open-recent () {
+    if f=$(notes list --sort modified | fzf)
+    then
+        $EDITOR $f
+    fi
 }
 pet-prev () 
 { 
