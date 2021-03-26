@@ -18,6 +18,12 @@ export PATH
 
 # User specific aliases and functions
 
+if [ -n "$SSH_CLIENT" ] || [ -n "$SSH_TTY" ]; then
+    export GIT_PROMPT_THEME=Single_line_NoExitState
+else
+    export GIT_PROMPT_THEME=Solarized_NoExitState
+fi
+
 [[ -f /usr/share/fzf/shell/key-bindings.bash ]] && source /usr/share/fzf/shell/key-bindings.bash [[ -f /etc/bash_completion.d/fzf ]] && source /etc/bash_completion.d/fzf
 [[ $- == *i* ]] && source /opt/bash-git-prompt/gitprompt.sh
 [[ $- == *i* ]] && source /home/ofey/.local/share/blesh/ble.sh --noattach
@@ -46,7 +52,6 @@ export HISTCONTROL=ignoredups:erasedups  # no duplicate entries
 export LESS='--quit-if-one-screen --ignore-case --status-column --LONG-PROMPT --RAW-CONTROL-CHARS --HILITE-UNREAD --tabs=4 --no-init --window=-4'
 export PAGER="nvimpager"
 export FZF_CTRL_T_OPTS="--preview 'bat --style=numbers --color=always --line-range :500 {}'"
-export GIT_PROMPT_THEME=Solarized_NoExitState
 
 unset GOROOT
 
