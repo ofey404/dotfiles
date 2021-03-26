@@ -19,7 +19,7 @@ export PATH
 # User specific aliases and functions
 
 [[ -f /usr/share/fzf/shell/key-bindings.bash ]] && source /usr/share/fzf/shell/key-bindings.bash [[ -f /etc/bash_completion.d/fzf ]] && source /etc/bash_completion.d/fzf
-# [[ -f /opt/gitstatus/gitstatus.prompt.sh ]] && source /opt/gitstatus/gitstatus.prompt.sh
+[[ $- == *i* ]] && source /opt/bash-git-prompt/gitprompt.sh
 [[ $- == *i* ]] && source /home/ofey/.local/share/blesh/ble.sh --noattach
 # [[ -f /opt/ble-0.3.3/ble.sh  ]] && source /opt/ble-0.3.3/ble.sh
 [[ -f /.secret/secretrc ]] && source ~/.secret/secretrc
@@ -46,6 +46,7 @@ export HISTCONTROL=ignoredups:erasedups  # no duplicate entries
 export LESS='--quit-if-one-screen --ignore-case --status-column --LONG-PROMPT --RAW-CONTROL-CHARS --HILITE-UNREAD --tabs=4 --no-init --window=-4'
 export PAGER="nvimpager"
 export FZF_CTRL_T_OPTS="--preview 'bat --style=numbers --color=always --line-range :500 {}'"
+export GIT_PROMPT_THEME=Solarized_NoExitState
 
 unset GOROOT
 
@@ -152,7 +153,7 @@ open-in-nvim ()
     then
       if f=$(fzf)
       then
-        nvim $f
+        READLINE_LINE="nvim $f"
       fi
     else
       READLINE_LINE="nvim $READLINE_LINE"
@@ -165,9 +166,8 @@ bind -x '"\C-s": pet-select'
 stty kill undef
 bind -x '"\C-u": kill-to-system'
 bind -x '"\C-g": gitui'
-bind -x '"\C-f": ranger'
-bind -x '"\C-i": open-in-nvim'
-
+bind -x '"\C-h": ranger'
+bind -x '"\C-v": open-in-nvim'
 
 
 shopt -s histappend                      # append to history, don't overwrite it
