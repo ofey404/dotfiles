@@ -93,6 +93,7 @@ alias t='firefox --new-tab'
 alias man='moreman'
 alias s='source .env'
 alias info='info --vi-key'
+alias x='xdg-open'
 
 
 SYSTEM_CLIPBOARD_COMMAND='xclip -selection clipboard'
@@ -155,12 +156,26 @@ open-in-nvim ()
 { 
     if [[ -z "$READLINE_LINE" ]]
     then
-      if f=$(fzf)
-      then
-        READLINE_LINE="nvim $f"
-      fi
+        if f=$(fzf)
+        then
+            READLINE_LINE="nvim $f"
+        fi
     else
-      READLINE_LINE="nvim $READLINE_LINE"
+        READLINE_LINE="nvim $READLINE_LINE"
+    fi
+    READLINE_POINT=${#BUFFER}
+}
+leave-ranger-with-cd ()
+{
+    if ranger --choosedir=$HOME/.rangerdir
+    then
+        RANGER_DIR=$(cat $HOME/.rangerdir)
+        if [[ ! "$RANGER_DIR" -ef . ]]
+        then
+            RANGER_RELATIVE_DIR=$(realpath --relative-base=. $RANGER_DIR)
+            READLINE_LINE="cd $RANGER_RELATIVE_DIR"
+            READLINE_POINT=${#BUFFER}
+        fi
     fi
 }
 
@@ -170,7 +185,7 @@ bind -x '"\C-s": pet-select'
 stty kill undef
 bind -x '"\C-u": kill-to-system'
 bind -x '"\C-g": gitui'
-bind -x '"\C-h": ranger'
+bind -x '"\C-h": leave-ranger-with-cd'
 bind -x '"\C-v": open-in-nvim'
 
 
