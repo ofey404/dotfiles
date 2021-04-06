@@ -92,6 +92,8 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 Plug 'mattn/emmet-vim'
 
+Plug 'Yggdroot/indentLine'
+
 Plug 'google/vim-jsonnet'
 
 " For FZF

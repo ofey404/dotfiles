@@ -30,11 +30,10 @@ fi
 # [[ -f /opt/ble-0.3.3/ble.sh  ]] && source /opt/ble-0.3.3/ble.sh
 [[ -f /.secret/secretrc ]] && source ~/.secret/secretrc
 [[ -f /etc/profile.d/autojump.sh ]] && source /etc/profile.d/autojump.sh
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 export NOTES_CLI_HOME=/home/ofey/Documents/Notes
 export FZF_DEFAULT_COMMAND='rg --files'
+export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 export NOTES_CLI_EDITOR=nvim
 export EDITOR=nvim
 export VISUAL=nvim
@@ -54,7 +53,6 @@ export HISTCONTROL=ignoredups:erasedups  # no duplicate entries
 export LESS='--quit-if-one-screen --ignore-case --status-column --LONG-PROMPT --RAW-CONTROL-CHARS --HILITE-UNREAD --tabs=4 --no-init --window=-4'
 export PAGER="nvimpager"
 export FZF_CTRL_T_OPTS="--preview 'bat --style=numbers --color=always --line-range :500 {}'"
-export NVM_DIR="$HOME/.nvm"
 
 unset GOROOT
 
@@ -178,8 +176,6 @@ leave-ranger-with-cd ()
             RANGER_RELATIVE_DIR=$(realpath --relative-base=. $RANGER_DIR)
             READLINE_LINE="cd $RANGER_RELATIVE_DIR"
             READLINE_POINT=${#BUFFER}
-        else
-            READLINE_LINE=""
         fi
     fi
 }
@@ -196,7 +192,11 @@ bind -x '"\C-v": open-in-nvim'
 
 shopt -s histappend                      # append to history, don't overwrite it
 
-[[ $- == *i* ]] && fortune
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
+# Those lines should be at the end of the config file.
+[[ $- == *i* ]] && fortune
 [[ ${BLE_VERSION-} ]] && ble-attach
 
