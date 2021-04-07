@@ -27,7 +27,6 @@ fi
 [[ -f /usr/share/fzf/shell/key-bindings.bash ]] && source /usr/share/fzf/shell/key-bindings.bash [[ -f /etc/bash_completion.d/fzf ]] && source /etc/bash_completion.d/fzf
 [[ $- == *i* ]] && source /opt/bash-git-prompt/gitprompt.sh
 [[ $- == *i* ]] && source /home/ofey/.local/share/blesh/ble.sh --noattach
-# [[ -f /opt/ble-0.3.3/ble.sh  ]] && source /opt/ble-0.3.3/ble.sh
 [[ -f /.secret/secretrc ]] && source ~/.secret/secretrc
 [[ -f /etc/profile.d/autojump.sh ]] && source /etc/profile.d/autojump.sh
 
@@ -153,19 +152,6 @@ kill-to-system ()
     echo "$READLINE_LINE" | $SYSTEM_CLIPBOARD_COMMAND
     READLINE_LINE=""
 }
-open-in-nvim () 
-{ 
-    if [[ -z "$READLINE_LINE" ]]
-    then
-        if f=$(fzf)
-        then
-            READLINE_LINE="nvim $f"
-        fi
-    else
-        READLINE_LINE="nvim $READLINE_LINE"
-    fi
-    READLINE_POINT=${#BUFFER}
-}
 leave-ranger-with-cd ()
 {
     if ranger --choosedir=$HOME/.rangerdir
@@ -187,7 +173,6 @@ stty kill undef
 bind -x '"\C-u": kill-to-system'
 bind -x '"\C-g": gitui'
 bind -x '"\C-h": leave-ranger-with-cd'
-bind -x '"\C-v": open-in-nvim'
 
 
 shopt -s histappend                      # append to history, don't overwrite it
