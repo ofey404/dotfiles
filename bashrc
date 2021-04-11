@@ -29,6 +29,7 @@ fi
 [[ $- == *i* ]] && source /home/ofey/.local/share/blesh/ble.sh --noattach
 [[ -f /.secret/secretrc ]] && source ~/.secret/secretrc
 [[ -f /etc/profile.d/autojump.sh ]] && source /etc/profile.d/autojump.sh
+[[ -s "/home/ofey/.gvm/scripts/gvm" ]] && source "/home/ofey/.gvm/scripts/gvm"
 
 export NOTES_CLI_HOME=/home/ofey/Documents/Notes
 export FZF_DEFAULT_COMMAND='rg --files'
@@ -59,7 +60,7 @@ alias NetAuth='python ~/misc/NetAuth.py'
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
 alias c='xclip -selection clipboard'
 alias egrep='egrep --color=auto'
-alias f='firefox --new-tab'
+alias f='fuck'
 alias fgrep='fgrep --color=auto'
 alias fuck='TF_CMD=$(TF_ALIAS=fuck PYTHONIOENCODING=utf-8 TF_SHELL_ALIASES=$(alias) thefuck $(fc -ln -1)) && eval $TF_CMD; history -s $TF_CMD'
 alias g='google.sh'
@@ -184,4 +185,5 @@ export NVM_DIR="$HOME/.nvm"
 # Those lines should be at the end of the config file.
 [[ $- == *i* ]] && fortune
 [[ ${BLE_VERSION-} ]] && ble-attach
+
 
