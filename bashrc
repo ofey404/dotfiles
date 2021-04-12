@@ -62,18 +62,13 @@ unset GOROOT
 
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
 alias c="$SYSTEM_CLIPBOARD_COMMAND"
-alias egrep='egrep --color=auto'
 alias f='fuck'
-alias fgrep='fgrep --color=auto'
 alias fuck='TF_CMD=$(TF_ALIAS=fuck PYTHONIOENCODING=utf-8 TF_SHELL_ALIASES=$(alias) thefuck $(fc -ln -1)) && eval $TF_CMD; history -s $TF_CMD'
 alias g='google.sh'
-alias grep='grep --color=auto'
 alias k='kubectl'
 alias l='ls -CF'
-alias l.='ls -d .* --color=auto'
 alias la='ls -A'
 alias ll='ls -alF'
-alias ls='ls --color=auto'
 alias ne='notes-open-category'
 alias nn='notes-new-in-exist-category'
 alias nr='notes-open-recent'
@@ -81,18 +76,18 @@ alias ns='notes save'
 alias pafd='cd ~/Code/pafd-automated/ ; python main.py'
 alias remote='xfreerdp +window-drag +clipboard /u:Administrator /p:Co299792458 /v:106.15.249.201 /dynamic-resolution 2>&1 >> ~/misc/log/remote.log'
 alias which='(alias; declare -f) | /usr/bin/which --tty-only --read-alias --read-functions --show-tilde --show-dot'
-alias xzegrep='xzegrep --color=auto'
-alias xzfgrep='xzfgrep --color=auto'
-alias xzgrep='xzgrep --color=auto'
-alias zegrep='zegrep --color=auto'
-alias zfgrep='zfgrep --color=auto'
-alias zgrep='zgrep --color=auto'
 alias p='proxychains'
 alias t='firefox --new-tab'
 alias man='moreman'
 alias s='source .env'
 alias info='info --vi-key'
 alias x='xdg-open'
+
+
+for COLOR_AUTO in ls grep egrep fgrep xzegrep xzfgrep xzgrep zegrep zfgrep zgrep
+do
+    alias $COLOR_AUTO="$COLOR_AUTO --color=auto"
+done
 
 
 counter () 
