@@ -24,12 +24,14 @@ else
     export GIT_PROMPT_THEME=Solarized_NoExitState
 fi
 
+
 [[ -f /usr/share/fzf/shell/key-bindings.bash ]] && source /usr/share/fzf/shell/key-bindings.bash [[ -f /etc/bash_completion.d/fzf ]] && source /etc/bash_completion.d/fzf
 [[ $- == *i* ]] && source /opt/bash-git-prompt/gitprompt.sh
 [[ $- == *i* ]] && source /home/ofey/.local/share/blesh/ble.sh --noattach
 [[ -f /.secret/secretrc ]] && source ~/.secret/secretrc
 [[ -f /etc/profile.d/autojump.sh ]] && source /etc/profile.d/autojump.sh
 [[ -s "/home/ofey/.gvm/scripts/gvm" ]] && source "/home/ofey/.gvm/scripts/gvm"
+
 
 export NOTES_CLI_HOME=/home/ofey/Documents/Notes
 export FZF_DEFAULT_COMMAND='rg --files'
@@ -39,7 +41,6 @@ export EDITOR=nvim
 export VISUAL=nvim
 export VIRTUALENVWRAPPER_SCRIPT=/home/ofey/.local/bin/virtualenvwrapper.sh
 export WORKON_HOME=/home/ofey/.virtualenvs
-export USER=ofey
 export VIRTUALENVWRAPPER_PROJECT_FILENAME=.project
 export PATH="/home/ofey/.go-tpc/bin:/home/ofey/.go-tpc/bin:/home/ofey/.local/bin:/home/ofey/.tiup/bin:/home/ofey/.go-tpc/bin:/home/ofey/.cargo/bin:/usr/lib64/ccache:/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin:/var/lib/snapd/snap/bin"
 export PATH="$PATH:/home/ofey/go/bin"
@@ -53,12 +54,14 @@ export HISTCONTROL=ignoredups:erasedups  # no duplicate entries
 export LESS='--quit-if-one-screen --ignore-case --status-column --LONG-PROMPT --RAW-CONTROL-CHARS --HILITE-UNREAD --tabs=4 --no-init --window=-4'
 export PAGER="nvimpager"
 export FZF_CTRL_T_OPTS="--preview 'bat --style=numbers --color=always --line-range :500 {}'"
+export SYSTEM_CLIPBOARD_COMMAND='xclip -selection clipboard'
+
 
 unset GOROOT
 
-alias NetAuth='python ~/misc/NetAuth.py'
+
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
-alias c='xclip -selection clipboard'
+alias c="$SYSTEM_CLIPBOARD_COMMAND"
 alias egrep='egrep --color=auto'
 alias f='fuck'
 alias fgrep='fgrep --color=auto'
@@ -77,10 +80,6 @@ alias nr='notes-open-recent'
 alias ns='notes save'
 alias pafd='cd ~/Code/pafd-automated/ ; python main.py'
 alias remote='xfreerdp +window-drag +clipboard /u:Administrator /p:Co299792458 /v:106.15.249.201 /dynamic-resolution 2>&1 >> ~/misc/log/remote.log'
-alias ta='todo add'
-alias tl='todo list'
-alias tr='todo remove'
-alias typora='/opt/typora/Typora'
 alias which='(alias; declare -f) | /usr/bin/which --tty-only --read-alias --read-functions --show-tilde --show-dot'
 alias xzegrep='xzegrep --color=auto'
 alias xzfgrep='xzfgrep --color=auto'
@@ -89,15 +88,12 @@ alias zegrep='zegrep --color=auto'
 alias zfgrep='zfgrep --color=auto'
 alias zgrep='zgrep --color=auto'
 alias p='proxychains'
-alias lastcmd='history | tail -n 2 | head -n 1 | sed "s/ *[0-9]* //"'
 alias t='firefox --new-tab'
 alias man='moreman'
 alias s='source .env'
 alias info='info --vi-key'
 alias x='xdg-open'
 
-
-SYSTEM_CLIPBOARD_COMMAND='xclip -selection clipboard'
 
 counter () 
 { 
@@ -178,11 +174,15 @@ bind -x '"\C-h": leave-ranger-with-cd'
 
 shopt -s histappend                      # append to history, don't overwrite it
 
+
+# Node Version Manager
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-# Those lines should be at the end of the config file.
+
+# Bash Line Editor and fortune
+#   Those lines should be at the end of the config file.
 [[ $- == *i* ]] && fortune
 [[ ${BLE_VERSION-} ]] && ble-attach
 
