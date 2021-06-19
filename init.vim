@@ -380,3 +380,6 @@ nnoremap <silent><nowait> <leader>j  :<C-u>CocNext<CR>
 nnoremap <silent><nowait> <leader>k  :<C-u>CocPrev<CR>
 " Resume latest coc list.
 nnoremap <silent><nowait> <leader>p  :<C-u>CocListResume<CR>
+
+" Golang: Add missing imports on save
+autocmd BufWritePre *.go :silent call CocAction('runCommand', 'editor.action.organizeImport')

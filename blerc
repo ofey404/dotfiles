@@ -1,0 +1,2 @@
+ble-bind -m 'emacs' -f 'M-j' 'accept-line'
+

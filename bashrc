@@ -30,6 +30,7 @@ fi
 [[ $- == *i* ]] && source /home/ofey/.local/share/blesh/ble.sh --noattach
 [[ -f /.secret/secretrc ]] && source ~/.secret/secretrc
 [[ -f /etc/profile.d/autojump.sh ]] && source /etc/profile.d/autojump.sh
+[[ -f /etc/profile.d/cuda.sh ]] && source /etc/profile.d/cuda.sh
 [[ -s "/home/ofey/.gvm/scripts/gvm" ]] && source "/home/ofey/.gvm/scripts/gvm"
 
 
@@ -44,6 +45,7 @@ export WORKON_HOME=/home/ofey/.virtualenvs
 export VIRTUALENVWRAPPER_PROJECT_FILENAME=.project
 export PATH="/home/ofey/.go-tpc/bin:/home/ofey/.go-tpc/bin:/home/ofey/.local/bin:/home/ofey/.tiup/bin:/home/ofey/.go-tpc/bin:/home/ofey/.cargo/bin:/usr/lib64/ccache:/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin:/var/lib/snapd/snap/bin"
 export PATH="$PATH:/home/ofey/go/bin"
+export PATH="/usr/local/cuda-11.3/bin:$PATH"
 export FZF_COMPLETION_TRIGGER=','
 export VIRTUALENVWRAPPER_HOOK_DIR=/home/ofey/.virtualenvs
 export PATH=$PATH:/usr/local/go/bin
