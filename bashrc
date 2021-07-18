@@ -118,12 +118,12 @@ notes-open-recent () {
 }
 pet-prev () 
 { 
-    PREV=$(echo `history | tail -n2 | head -n1` | sed 's/[0-9]* //');
+    local PREV=$(echo `history | tail -n2 | head -n1` | sed 's/[0-9]* //');
     sh -c "pet new `printf %q "$PREV"`"
 }
 pet-select () 
 { 
-    BUFFER=$(pet search --query "$READLINE_LINE");
+    local BUFFER=$(pet search --query "$READLINE_LINE");
     READLINE_LINE=$BUFFER;
     READLINE_POINT=${#BUFFER}
 }
@@ -150,17 +150,19 @@ leave-ranger-with-cd ()
 {
     if ranger --choosedir=$HOME/.rangerdir
     then
-        RANGER_DIR=$(cat $HOME/.rangerdir)
+        local RANGER_DIR=$(cat $HOME/.rangerdir)
         if [[ ! "$RANGER_DIR" -ef . ]]
         then
-            RANGER_RELATIVE_DIR=$(realpath --relative-base=. $RANGER_DIR)
+            local RANGER_RELATIVE_DIR=$(realpath --relative-base=. $RANGER_DIR)
             READLINE_LINE="cd $RANGER_RELATIVE_DIR"
             READLINE_POINT=${#BUFFER}
         fi
     fi
 }
 fzf-cd-wrapper() {
-    READLINE_LINE=$(__fzf_cd__)
+    local BUFFER=$(__fzf_cd__)
+    READLINE_LINE=$BUFFER;
+    READLINE_POINT=${#BUFFER}
 }
 
 
