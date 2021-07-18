@@ -159,6 +159,10 @@ leave-ranger-with-cd ()
         fi
     fi
 }
+fzf-cd-wrapper() {
+    READLINE_LINE=$(__fzf_cd__)
+}
+
 
 
 stty stop undef
@@ -167,6 +171,7 @@ stty kill undef
 bind -x '"\C-u": kill-to-system'
 bind -x '"\C-g": gitui'
 bind -x '"\C-h": leave-ranger-with-cd'
+bind -x '"\C-e": fzf-cd-wrapper'
 
 
 shopt -s histappend                      # append to history, don't overwrite it

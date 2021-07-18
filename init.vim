@@ -1,6 +1,5 @@
 " =======================================================
 " Common setup
-imap jk <ESC>
 set clipboard=unnamedplus
 set nowrap
 set noswapfile
