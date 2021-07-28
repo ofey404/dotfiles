@@ -27,19 +27,15 @@ fi
 
 [[ -f /usr/share/fzf/shell/key-bindings.bash ]] && source /usr/share/fzf/shell/key-bindings.bash [[ -f /etc/bash_completion.d/fzf ]] && source /etc/bash_completion.d/fzf
 [[ $- == *i* ]] && source /opt/bash-git-prompt/gitprompt.sh
-[[ $- == *i* ]] && source /home/ofey/.local/share/blesh/ble.sh --noattach
 [[ -f /.secret/secretrc ]] && source ~/.secret/secretrc
 [[ -f /etc/profile.d/autojump.sh ]] && source /etc/profile.d/autojump.sh
-[[ -f /etc/profile.d/cuda.sh ]] && source /etc/profile.d/cuda.sh
 [[ -s "/home/ofey/.gvm/scripts/gvm" ]] && source "/home/ofey/.gvm/scripts/gvm"
 
 
-export NOTES_CLI_HOME=/home/ofey/Documents/Notes
 export FZF_DEFAULT_COMMAND='rg --files'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
-export NOTES_CLI_EDITOR=nvim
 export EDITOR=nvim
-export VISUAL=nvim
+export VISUAL=code
 export VIRTUALENVWRAPPER_SCRIPT=/home/ofey/.local/bin/virtualenvwrapper.sh
 export WORKON_HOME=/home/ofey/.virtualenvs
 export VIRTUALENVWRAPPER_PROJECT_FILENAME=.project
@@ -67,14 +63,9 @@ alias c="$SYSTEM_CLIPBOARD_COMMAND"
 alias f='fuck'
 alias fuck='TF_CMD=$(TF_ALIAS=fuck PYTHONIOENCODING=utf-8 TF_SHELL_ALIASES=$(alias) thefuck $(fc -ln -1)) && eval $TF_CMD; history -s $TF_CMD'
 alias g='google.sh'
-alias k='kubectl'
 alias l='ls -CF'
 alias la='ls -A'
 alias ll='ls -alF'
-alias ne='notes-open-category'
-alias nn='notes-new-in-exist-category'
-alias nr='notes-open-recent'
-alias ns='notes save'
 alias pafd='cd ~/Code/pafd-automated/ ; python main.py'
 alias remote='xfreerdp +window-drag +clipboard /u:Administrator /p:Co299792458 /v:106.15.249.201 /dynamic-resolution 2>&1 >> ~/misc/log/remote.log'
 alias which='(alias; declare -f) | /usr/bin/which --tty-only --read-alias --read-functions --show-tilde --show-dot'
@@ -92,30 +83,6 @@ do
 done
 
 
-counter () 
-{ 
-    for file in "$1"/*;
-    do
-        if [ -d "$file" ]; then
-            echo "$file";
-            counter "$file";
-        fi;
-    done
-}
-notes-new-in-exist-category () 
-{ 
-    notes new $(counter $NOTES_CLI_HOME | fzf) $1
-}
-notes-open-category () 
-{ 
-    notes list | fzf --height 40% --layout=reverse --preview 'cat {} 2> /dev/null | head -500' | xargs -o $NOTES_CLI_EDITOR
-}
-notes-open-recent () {
-    if f=$(notes list --sort modified | fzf)
-    then
-        $EDITOR $f
-    fi
-}
 pet-prev () 
 { 
     local PREV=$(echo `history | tail -n2 | head -n1` | sed 's/[0-9]* //');
@@ -159,12 +126,6 @@ leave-ranger-with-cd ()
         fi
     fi
 }
-fzf-cd-wrapper() {
-    local BUFFER=$(__fzf_cd__)
-    READLINE_LINE=$BUFFER;
-    READLINE_POINT=${#BUFFER}
-}
-
 
 
 stty stop undef
@@ -173,11 +134,8 @@ stty kill undef
 bind -x '"\C-u": kill-to-system'
 bind -x '"\C-g": gitui'
 bind -x '"\C-h": leave-ranger-with-cd'
-bind -x '"\C-e": fzf-cd-wrapper'
-
 
 shopt -s histappend                      # append to history, don't overwrite it
-
 
 # Node Version Manager
 export NVM_DIR="$HOME/.nvm"
@@ -185,9 +143,10 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 
+PATH="$HOME/.local/bin:$HOME/bin:$PATH"
+
 # Bash Line Editor and fortune
 #   Those lines should be at the end of the config file.
 [[ $- == *i* ]] && fortune
-[[ ${BLE_VERSION-} ]] && ble-attach
 
 
