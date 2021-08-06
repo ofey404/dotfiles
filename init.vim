@@ -40,8 +40,6 @@ let mapleader=" "
 " General keymaping
 
 " Pane navigation
-nnoremap <C-J> <C-W>j
-nnoremap <C-K> <C-W>k
 nnoremap <C-L> <C-W>l
 nnoremap <C-H> <C-W>h
 
@@ -72,8 +70,8 @@ function! Term_toggle(height)
     endif
 endfunction
 
-nnoremap <F12> :call Term_toggle(10)<cr>
-tnoremap <F12> <C-\><C-n>:call Term_toggle(10)<cr>
+nnoremap <C-j> :call Term_toggle(10)<cr>
+tnoremap <C-j> <C-\><C-n>:call Term_toggle(10)<cr>
 
 " ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 " Config above should work on a vim without plugin

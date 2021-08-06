@@ -25,6 +25,15 @@ else
 fi
 
 
+if [[ -z "$IN_VSCODE_INTEGRATED_TERMINAL" ]]; then
+    export EDITOR=nvim
+    export VISUAL=nvim
+else
+    export EDITOR=code
+    export VISUAL=code
+fi
+
+
 [[ -f /usr/share/fzf/shell/key-bindings.bash ]] && source /usr/share/fzf/shell/key-bindings.bash [[ -f /etc/bash_completion.d/fzf ]] && source /etc/bash_completion.d/fzf
 [[ $- == *i* ]] && source /opt/bash-git-prompt/gitprompt.sh
 [[ -f /.secret/secretrc ]] && source ~/.secret/secretrc
@@ -34,8 +43,6 @@ fi
 
 export FZF_DEFAULT_COMMAND='rg --files'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
-export EDITOR=nvim
-export VISUAL=code
 export VIRTUALENVWRAPPER_SCRIPT=/home/ofey/.local/bin/virtualenvwrapper.sh
 export WORKON_HOME=/home/ofey/.virtualenvs
 export VIRTUALENVWRAPPER_PROJECT_FILENAME=.project
@@ -130,6 +137,7 @@ leave-ranger-with-cd ()
 
 stty stop undef
 bind -x '"\C-s": pet-select'
+stty kill undef
 stty kill undef
 bind -x '"\C-u": kill-to-system'
 bind -x '"\C-g": gitui'
