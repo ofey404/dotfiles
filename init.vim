@@ -122,7 +122,7 @@ Plug 'itspriddle/vim-shellcheck'
 
 " For github style markdown highlight
 Plug 'godlygeek/tabular'
-Plug 'plasticboy/vim-markdown'
+" Plug 'plasticboy/vim-markdown'
 " Initialize plugin system
 call plug#end()
 

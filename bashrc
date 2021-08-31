@@ -52,7 +52,6 @@ export PATH="/usr/local/cuda-11.3/bin:$PATH"
 export FZF_COMPLETION_TRIGGER=','
 export VIRTUALENVWRAPPER_HOOK_DIR=/home/ofey/.virtualenvs
 export PATH=$PATH:/usr/local/go/bin
-export FZF_COMPLETION_TRIGGER=','
 export HISTSIZE=-1
 export HISTFILESIZE=-1
 export HISTCONTROL=ignoredups:erasedups  # no duplicate entries
