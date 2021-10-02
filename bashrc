@@ -73,7 +73,6 @@ alias l='ls -CF'
 alias la='ls -A'
 alias ll='ls -alF'
 alias pafd='cd ~/Code/pafd-automated/ ; python main.py'
-alias remote='xfreerdp +window-drag +clipboard /u:Administrator /p:Co299792458 /v:106.15.249.201 /dynamic-resolution 2>&1 >> ~/misc/log/remote.log'
 alias which='(alias; declare -f) | /usr/bin/which --tty-only --read-alias --read-functions --show-tilde --show-dot'
 alias p='proxychains'
 alias t='firefox --new-tab'
@@ -81,7 +80,7 @@ alias man='moreman'
 alias s='source .env'
 alias info='info --vi-key'
 alias x='xdg-open'
-
+alias note='nvim -c "set wrap" ~/Documents/Note.md'
 
 for COLOR_AUTO in ls grep egrep fgrep xzegrep xzfgrep xzgrep zegrep zfgrep zgrep
 do
