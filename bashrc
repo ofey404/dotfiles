@@ -76,11 +76,11 @@ alias pafd='cd ~/Code/pafd-automated/ ; python main.py'
 alias which='(alias; declare -f) | /usr/bin/which --tty-only --read-alias --read-functions --show-tilde --show-dot'
 alias p='proxychains'
 alias t='firefox --new-tab'
-alias man='moreman'
+alias man='PAGER=less moreman'
 alias s='source .env'
 alias info='info --vi-key'
 alias x='xdg-open'
-alias note='nvim -c "set wrap" ~/Documents/Note.md'
+alias note='typora ~/Documents/Note.md'
 
 for COLOR_AUTO in ls grep egrep fgrep xzegrep xzfgrep xzgrep zegrep zfgrep zgrep
 do
