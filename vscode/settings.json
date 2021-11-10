@@ -6,6 +6,12 @@
     "vim.useSystemClipboard": true,
     "vim.useCtrlKeys": true,
     "vim.hlsearch": true,
+    "vim.insertModeKeyBindings": [
+        {
+        "before": ["j", "k"],
+        "after": ["<Esc>"]
+        }
+    ],
     "vim.normalModeKeyBindingsNonRecursive": [
         {
             "before": [
@@ -79,13 +85,17 @@
     "vim.autoSwitchInputMethod.defaultIM": "xkb:us::eng",
     "vim.autoSwitchInputMethod.obtainIMCmd": "/usr/bin/ibus engine",
     "vim.autoSwitchInputMethod.switchIMCmd": "/usr/bin/ibus engine {im}",
+
+    // For ligatures (character combination).
     "editor.fontFamily": "'Fira Code', 'Cascadia Code', 'DejaVu Sans Mono', 'Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback'",
+
     "explorer.confirmDelete": false,
     "editor.smoothScrolling": true,
     "workbench.list.smoothScrolling": true,
-    "editor.lineNumbers": "relative", // removes minimap
+    "editor.lineNumbers": "relative",
     "editor.renderWhitespace": "none", // removes whitespace chars
     "editor.renderIndentGuides": false, // removes indent guides
+
     "explorer.openEditors.visible": 0,
     "leetcode.hint.configWebviewMarkdown": false,
     "leetcode.workspaceFolder": "/home/ofey/.leetcode",
@@ -101,8 +111,7 @@
     "git.confirmSync": false,
     "settingsSync.ignoredSettings": [
         "editor.fontFamily",
-        "terminal.integrated.fontFamily",
-        "http.proxy"
+        "terminal.integrated.fontFamily"
     ],
     "settingsSync.keybindingsPerPlatform": false,
     "workbench.startupEditor": "newUntitledFile",
@@ -111,18 +120,14 @@
         "*.lex": "lex",
         ".env": "shellscript"
     },
-    "tab-groups.groups": "W3sibmFtZSI6IkJyYW5jaDogYXJ0aWNsZSIsImxpc3QiOlt7ImRvY3VtZW50Ijp7InVyaSI6eyIkbWlkIjoxLCJmc1BhdGgiOiIvaG9tZS9vZmV5L0RvY3VtZW50cy9CbG9nL2pla3lsbC1ibG9nLXRlbXBsYXRlL19sYXlvdXRzL2RlZmF1bHQuaHRtbCIsImV4dGVybmFsIjoiZmlsZTovLy9ob21lL29mZXkvRG9jdW1lbnRzL0Jsb2cvamVreWxsLWJsb2ctdGVtcGxhdGUvX2xheW91dHMvZGVmYXVsdC5odG1sIiwicGF0aCI6Ii9ob21lL29mZXkvRG9jdW1lbnRzL0Jsb2cvamVreWxsLWJsb2ctdGVtcGxhdGUvX2xheW91dHMvZGVmYXVsdC5odG1sIiwic2NoZW1lIjoiZmlsZSJ9LCJmaWxlTmFtZSI6Ii9ob21lL29mZXkvRG9jdW1lbnRzL0Jsb2cvamVreWxsLWJsb2ctdGVtcGxhdGUvX2xheW91dHMvZGVmYXVsdC5odG1sIiwiaXNVbnRpdGxlZCI6ZmFsc2UsImxhbmd1YWdlSWQiOiJodG1sIiwidmVyc2lvbiI6MjEsImlzQ2xvc2VkIjp0cnVlLCJpc0RpcnR5IjpmYWxzZSwiZW9sIjoxLCJsaW5lQ291bnQiOjIzfSwidmlld0NvbHVtbiI6MSwiZm9jdXNzZWQiOnRydWUsInBpbm5lZCI6ZmFsc2V9LHsiZG9jdW1lbnQiOnsidXJpIjp7IiRtaWQiOjEsImZzUGF0aCI6Ii9ob21lL29mZXkvRG9jdW1lbnRzL0Jsb2cvamVreWxsLWJsb2ctdGVtcGxhdGUvaW5kZXguaHRtbCIsImV4dGVybmFsIjoiZmlsZTovLy9ob21lL29mZXkvRG9jdW1lbnRzL0Jsb2cvamVreWxsLWJsb2ctdGVtcGxhdGUvaW5kZXguaHRtbCIsInBhdGgiOiIvaG9tZS9vZmV5L0RvY3VtZW50cy9CbG9nL2pla3lsbC1ibG9nLXRlbXBsYXRlL2luZGV4Lmh0bWwiLCJzY2hlbWUiOiJmaWxlIn0sImZpbGVOYW1lIjoiL2hvbWUvb2ZleS9Eb2N1bWVudHMvQmxvZy9qZWt5bGwtYmxvZy10ZW1wbGF0ZS9pbmRleC5odG1sIiwiaXNVbnRpdGxlZCI6ZmFsc2UsImxhbmd1YWdlSWQiOiJodG1sIiwidmVyc2lvbiI6MSwiaXNDbG9zZWQiOnRydWUsImlzRGlydHkiOmZhbHNlLCJlb2wiOjEsImxpbmVDb3VudCI6N30sInZpZXdDb2x1bW4iOjEsImZvY3Vzc2VkIjpmYWxzZSwicGlubmVkIjpmYWxzZX1dfSx7Im5hbWUiOiJCcmFuY2g6IG1hc3RlciIsImxpc3QiOltdfSx7Im5hbWUiOiJCcmFuY2g6IG1haW4iLCJsaXN0IjpbeyJkb2N1bWVudCI6eyJ1cmkiOnsiJG1pZCI6MSwiZnNQYXRoIjoiL2hvbWUvb2ZleS9Eb2N1bWVudHMvQmxvZy9qZWt5bGwtYmxvZy10ZW1wbGF0ZS9fcG9zdHMvMjAyMS0wMi0yNy13ZWVrbHktc3VtbWFyeS5tZCIsImV4dGVybmFsIjoiZmlsZTovLy9ob21lL29mZXkvRG9jdW1lbnRzL0Jsb2cvamVreWxsLWJsb2ctdGVtcGxhdGUvX3Bvc3RzLzIwMjEtMDItMjctd2Vla2x5LXN1bW1hcnkubWQiLCJwYXRoIjoiL2hvbWUvb2ZleS9Eb2N1bWVudHMvQmxvZy9qZWt5bGwtYmxvZy10ZW1wbGF0ZS9fcG9zdHMvMjAyMS0wMi0yNy13ZWVrbHktc3VtbWFyeS5tZCIsInNjaGVtZSI6ImZpbGUifSwiZmlsZU5hbWUiOiIvaG9tZS9vZmV5L0RvY3VtZW50cy9CbG9nL2pla3lsbC1ibG9nLXRlbXBsYXRlL19wb3N0cy8yMDIxLTAyLTI3LXdlZWtseS1zdW1tYXJ5Lm1kIiwiaXNVbnRpdGxlZCI6ZmFsc2UsImxhbmd1YWdlSWQiOiJtYXJrZG93biIsInZlcnNpb24iOjksImlzQ2xvc2VkIjp0cnVlLCJpc0RpcnR5IjpmYWxzZSwiZW9sIjoxLCJsaW5lQ291bnQiOjExNn0sInZpZXdDb2x1bW4iOjEsImZvY3Vzc2VkIjpmYWxzZSwicGlubmVkIjpmYWxzZX0seyJkb2N1bWVudCI6eyJ1cmkiOnsiJG1pZCI6MSwiZnNQYXRoIjoiL2hvbWUvb2ZleS9Eb2N1bWVudHMvQmxvZy9qZWt5bGwtYmxvZy10ZW1wbGF0ZS9fcG9zdHMvMjAyMC0wMy0xNC13ZWVrbHktc3VtbWFyeS5tZCIsImV4dGVybmFsIjoiZmlsZTovLy9ob21lL29mZXkvRG9jdW1lbnRzL0Jsb2cvamVreWxsLWJsb2ctdGVtcGxhdGUvX3Bvc3RzLzIwMjAtMDMtMTQtd2Vla2x5LXN1bW1hcnkubWQiLCJwYXRoIjoiL2hvbWUvb2ZleS9Eb2N1bWVudHMvQmxvZy9qZWt5bGwtYmxvZy10ZW1wbGF0ZS9fcG9zdHMvMjAyMC0wMy0xNC13ZWVrbHktc3VtbWFyeS5tZCIsInNjaGVtZSI6ImZpbGUifSwiZmlsZU5hbWUiOiIvaG9tZS9vZmV5L0RvY3VtZW50cy9CbG9nL2pla3lsbC1ibG9nLXRlbXBsYXRlL19wb3N0cy8yMDIwLTAzLTE0LXdlZWtseS1zdW1tYXJ5Lm1kIiwiaXNVbnRpdGxlZCI6ZmFsc2UsImxhbmd1YWdlSWQiOiJtYXJrZG93biIsInZlcnNpb24iOjkxNSwiaXNDbG9zZWQiOnRydWUsImlzRGlydHkiOmZhbHNlLCJlb2wiOjEsImxpbmVDb3VudCI6Mjd9LCJ2aWV3Q29sdW1uIjoxLCJmb2N1c3NlZCI6dHJ1ZSwicGlubmVkIjpmYWxzZX1dfSx7Im5hbWUiOiJCcmFuY2g6IGFkZC1jb25maWctZXhhbXBsZXMiLCJsaXN0IjpbeyJkb2N1bWVudCI6eyJ1cmkiOnsiJG1pZCI6MSwiZnNQYXRoIjoiL2hvbWUvb2ZleS9Eb2N1bWVudHMvQmxvZy9qZWt5bGwtYmxvZy10ZW1wbGF0ZS9fcG9zdHMvMjAyMS0wMi0yNy13ZWVrbHktc3VtbWFyeS5tZCIsImV4dGVybmFsIjoiZmlsZTovLy9ob21lL29mZXkvRG9jdW1lbnRzL0Jsb2cvamVreWxsLWJsb2ctdGVtcGxhdGUvX3Bvc3RzLzIwMjEtMDItMjctd2Vla2x5LXN1bW1hcnkubWQiLCJwYXRoIjoiL2hvbWUvb2ZleS9Eb2N1bWVudHMvQmxvZy9qZWt5bGwtYmxvZy10ZW1wbGF0ZS9fcG9zdHMvMjAyMS0wMi0yNy13ZWVrbHktc3VtbWFyeS5tZCIsInNjaGVtZSI6ImZpbGUifSwiZmlsZU5hbWUiOiIvaG9tZS9vZmV5L0RvY3VtZW50cy9CbG9nL2pla3lsbC1ibG9nLXRlbXBsYXRlL19wb3N0cy8yMDIxLTAyLTI3LXdlZWtseS1zdW1tYXJ5Lm1kIiwiaXNVbnRpdGxlZCI6ZmFsc2UsImxhbmd1YWdlSWQiOiJtYXJrZG93biIsInZlcnNpb24iOjEsImlzQ2xvc2VkIjp0cnVlLCJpc0RpcnR5IjpmYWxzZSwiZW9sIjoxLCJsaW5lQ291bnQiOjExOH0sInZpZXdDb2x1bW4iOjEsImZvY3Vzc2VkIjpmYWxzZSwicGlubmVkIjp0cnVlfV19XQ==",
-    "workbench.activityBar.visible": false,
     "workbench.editorAssociations": {
         "*.ipynb": "jupyter-notebook"
     },
-    "window.menuBarVisibility": "hidden",
     "notebook.cellToolbarLocation": {
         "default": "right",
         "jupyter-notebook": "left"
     },
     "editor.suggestSelection": "first",
-    "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
     "security.workspace.trust.untrustedFiles": "open",
     "security.workspace.trust.enabled": false, // removes the status bar
     "editor.fontLigatures": true,
@@ -132,7 +137,31 @@
     "terminal.integrated.env.linux": {
         "IN_VSCODE_INTEGRATED_TERMINAL": "true"
     },
-    "window.zoomLevel": 2,
     "update.mode": "none",
-    "workbench.statusBar.visible": false,
+    "window.zoomLevel": 3,
+    "latex-workshop.view.pdf.viewer": "browser",
+    "window.menuBarVisibility": "hidden",
+    "todo-tree.general.tags": [
+        "BUG",
+        "HACK",
+        "FIXME",
+        "TODO",
+        "XXX",
+        "REFACTOR"
+    ],
+    "cSpell.enabled": false,
+    "[markdown]": {
+        "editor.wordWrap": "on",
+        "editor.quickSuggestions": false,
+        "editor.tabSize": 2
+    },
+    "peacock.affectDebuggingStatusBar": true,
+    "peacock.affectStatusAndTitleBorders": true,
+    "peacock.affectTabActiveBorder": true,
+    "workbench.activityBar.visible": false,
+    "alive.autoLoadOnSave": true,
+    "alive.debug": true,
+    "alive.swank.checkForLatest": true,
+    "alive.format.indentWidth": 4,
+    "workbench.statusBar.visible": false
 }
