@@ -136,10 +136,11 @@ leave-ranger-with-cd ()
 stty stop undef
 bind -x '"\C-s": pet-select'
 stty kill undef
-stty kill undef
 bind -x '"\C-u": kill-to-system'
 bind -x '"\C-g": gitui'
 bind -x '"\C-h": leave-ranger-with-cd'
+stty discard undef
+bind -x '"\C-o": __fzf_cd__'
 
 shopt -s histappend                      # append to history, don't overwrite it
 
