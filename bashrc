@@ -127,9 +127,13 @@ leave-ranger-with-cd ()
         then
             local RANGER_RELATIVE_DIR=$(realpath --relative-base=. $RANGER_DIR)
             READLINE_LINE="cd $RANGER_RELATIVE_DIR"
-            READLINE_POINT=${#BUFFER}
+            READLINE_POINT=${#READLINE_LINE}
         fi
     fi
+}
+fzf-cd-with-linebreak(){
+    READLINE_LINE=$(__fzf_cd__)
+    READLINE_POINT=${#READLINE_LINE}
 }
 
 
@@ -140,7 +144,7 @@ bind -x '"\C-u": kill-to-system'
 bind -x '"\C-g": gitui'
 bind -x '"\C-h": leave-ranger-with-cd'
 stty discard undef
-bind -x '"\C-o": __fzf_cd__'
+bind -x '"\C-o": fzf-cd-with-linebreak'
 
 shopt -s histappend                      # append to history, don't overwrite it
 
