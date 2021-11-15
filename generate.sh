@@ -23,7 +23,7 @@ gnome-user.conf(){
 VSCODE_CONFIG_DIR=$HOME/.config/Code/User
 
 vscode(){
-    cp -t $SCRIPT_DIR/vscode $VSCODE_CONFIG_DIR/*.json
+    cp -t $SCRIPT_DIR/vscode $VSCODE_CONFIG_DIR/keybindings.json $VSCODE_CONFIG_DIR/settings.json
 }
 
 main(){
