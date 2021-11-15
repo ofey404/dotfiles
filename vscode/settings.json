@@ -138,7 +138,7 @@
         "IN_VSCODE_INTEGRATED_TERMINAL": "true"
     },
     "update.mode": "none",
-    "window.zoomLevel": 3,
+    "window.zoomLevel": 4,
     "latex-workshop.view.pdf.viewer": "browser",
     "window.menuBarVisibility": "hidden",
     "todo-tree.general.tags": [

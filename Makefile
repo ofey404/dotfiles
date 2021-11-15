@@ -1,0 +1,4 @@
+generate:
+	./generate.sh
+
+
