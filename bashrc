@@ -81,6 +81,12 @@ alias s='source .env'
 alias info='info --vi-key'
 alias x='xdg-open'
 alias note='typora ~/Documents/Note.md'
+alias -- -="cd -"
+alias ..="cd .."
+alias ...="cd ../.."
+alias ....="cd ../../.."
+alias .....="cd ../../../.."
+alias ......="cd ../../../../.."
 
 for COLOR_AUTO in ls grep egrep fgrep xzegrep xzfgrep xzgrep zegrep zfgrep zgrep
 do
