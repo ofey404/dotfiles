@@ -80,6 +80,7 @@ alias man='PAGER=less moreman'
 alias s='source .env'
 alias info='info --vi-key'
 alias x='xdg-open'
+alias typora="typora-nohup"
 alias note='typora ~/Documents/Note.md'
 alias -- -="cd -"
 alias ..="cd .."
@@ -140,6 +141,11 @@ leave-ranger-with-cd ()
 fzf-cd-with-linebreak(){
     READLINE_LINE=$(__fzf_cd__)
     READLINE_POINT=${#READLINE_LINE}
+}
+# Open a typora that won't exit while terminal closes
+typora-nohup(){
+    \typora $@ &
+    disown $!
 }
 
 
