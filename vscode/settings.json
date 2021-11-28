@@ -100,7 +100,7 @@
     "leetcode.hint.configWebviewMarkdown": false,
     "leetcode.workspaceFolder": "/home/ofey/.leetcode",
     "workbench.iconTheme": "material-icon-theme",
-    "leetcode.defaultLanguage": "rust",
+    "leetcode.defaultLanguage": "python3",
     "leetcode.hint.commentDescription": false,
     "leetcode.hint.commandShortcut": false,
     "git.ignoreLegacyWarning": true,
@@ -138,7 +138,6 @@
         "IN_VSCODE_INTEGRATED_TERMINAL": "true"
     },
     "update.mode": "none",
-    "window.zoomLevel": 4,
     "latex-workshop.view.pdf.viewer": "browser",
     "window.menuBarVisibility": "hidden",
     "todo-tree.general.tags": [
@@ -163,5 +162,6 @@
     "alive.debug": true,
     "alive.swank.checkForLatest": true,
     "alive.format.indentWidth": 4,
-    "workbench.statusBar.visible": false
+    "workbench.statusBar.visible": false,
+    "window.zoomLevel": 4
 }
