@@ -139,7 +139,7 @@ leave-ranger-with-cd ()
     fi
 }
 fzf-cd-with-linebreak(){
-    READLINE_LINE=$(__fzf_cd__)
+    READLINE_LINE=$READLINE_LINE$(__fzf_cd__)
     READLINE_POINT=${#READLINE_LINE}
 }
 # Open a typora that won't exit while terminal closes
@@ -172,4 +172,20 @@ PATH="$HOME/.local/bin:$HOME/bin:$PATH"
 #   Those lines should be at the end of the config file.
 [[ $- == *i* ]] && fortune
 
+
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/usr/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/usr/etc/profile.d/conda.sh" ]; then
+        . "/usr/etc/profile.d/conda.sh"
+    else
+        export PATH="/usr/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
 
