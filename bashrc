@@ -41,24 +41,24 @@ fi
 [[ -s "/home/ofey/.gvm/scripts/gvm" ]] && source "/home/ofey/.gvm/scripts/gvm"
 
 
-export FZF_DEFAULT_COMMAND='rg --files'
-export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
-export VIRTUALENVWRAPPER_SCRIPT=/home/ofey/.local/bin/virtualenvwrapper.sh
-export WORKON_HOME=/home/ofey/.virtualenvs
-export VIRTUALENVWRAPPER_PROJECT_FILENAME=.project
-export PATH="/home/ofey/.go-tpc/bin:/home/ofey/.go-tpc/bin:/home/ofey/.local/bin:/home/ofey/.tiup/bin:/home/ofey/.go-tpc/bin:/home/ofey/.cargo/bin:/usr/lib64/ccache:/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin:/var/lib/snapd/snap/bin"
-export PATH="$PATH:/home/ofey/go/bin"
-export PATH="/usr/local/cuda-11.3/bin:$PATH"
 export FZF_COMPLETION_TRIGGER=','
-export VIRTUALENVWRAPPER_HOOK_DIR=/home/ofey/.virtualenvs
-export PATH=$PATH:/usr/local/go/bin
-export HISTSIZE=-1
-export HISTFILESIZE=-1
+export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+export FZF_CTRL_T_OPTS="--preview 'bat --style=numbers --color=always --line-range :500 {}'"
+export FZF_DEFAULT_COMMAND='rg --files'
 export HISTCONTROL=ignoredups:erasedups  # no duplicate entries
+export HISTFILESIZE=-1
+export HISTSIZE=-1
 export LESS='--quit-if-one-screen --ignore-case --status-column --LONG-PROMPT --RAW-CONTROL-CHARS --HILITE-UNREAD --tabs=4 --no-init --window=-4'
 export PAGER="nvimpager"
-export FZF_CTRL_T_OPTS="--preview 'bat --style=numbers --color=always --line-range :500 {}'"
+export PATH="/home/ofey/.go-tpc/bin:/home/ofey/.go-tpc/bin:/home/ofey/.local/bin:/home/ofey/.tiup/bin:/home/ofey/.go-tpc/bin:/home/ofey/.cargo/bin:/usr/lib64/ccache:/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin:/var/lib/snapd/snap/bin"
+export PATH="/usr/local/cuda-11.3/bin:$PATH"
+export PATH="$PATH:/home/ofey/go/bin"
+export PATH=$PATH:/usr/local/go/bin
 export SYSTEM_CLIPBOARD_COMMAND='xclip -selection clipboard'
+export VIRTUALENVWRAPPER_HOOK_DIR=/home/ofey/.virtualenvs
+export VIRTUALENVWRAPPER_PROJECT_FILENAME=.project
+export VIRTUALENVWRAPPER_SCRIPT=/home/ofey/.local/bin/virtualenvwrapper.sh
+export WORKON_HOME=/home/ofey/.virtualenvs
 
 
 unset GOROOT
