@@ -171,11 +171,7 @@ export NVM_DIR="$HOME/.nvm"
 
 PATH="$HOME/.local/bin:$HOME/bin:$PATH"
 
-# Bash Line Editor and fortune
-#   Those lines should be at the end of the config file.
-[[ $- == *i* ]] && fortune
-
-
+fortune
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!

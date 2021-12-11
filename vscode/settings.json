@@ -1,4 +1,5 @@
 {
+    "editor.renderLineHighlight": "all",
     "http.proxy": "http://127.0.0.1:8118",
     // ============== VIM ========================
     "vim.easymotion": true,
@@ -129,7 +130,7 @@
     },
     "editor.suggestSelection": "first",
     "security.workspace.trust.untrustedFiles": "open",
-    "security.workspace.trust.enabled": false, // removes the status bar
+    "security.workspace.trust.enabled": false,
     "editor.fontLigatures": true,
     "editor.foldingStrategy": "indentation",
     "workbench.colorTheme": "Dark++ Italic",
@@ -154,14 +155,19 @@
         "editor.quickSuggestions": false,
         "editor.tabSize": 2
     },
-    "peacock.affectDebuggingStatusBar": true,
-    "peacock.affectStatusAndTitleBorders": true,
-    "peacock.affectTabActiveBorder": true,
     "workbench.activityBar.visible": false,
     "alive.autoLoadOnSave": true,
     "alive.debug": true,
     "alive.swank.checkForLatest": true,
     "alive.format.indentWidth": 4,
+    "window.zoomLevel": 5,
+    "files.autoSave": "afterDelay",
+    "terminal.integrated.commandsToSkipShell": [
+        "language-julia.interrupt"
+    ],
+    "julia.symbolCacheDownload": true,
+    "julia.enableTelemetry": true,
+    "sync.gist": "03f7402518bd4d828b316d2985e95a4a",
     "workbench.statusBar.visible": false,
-    "window.zoomLevel": 4
+    "diffEditor.ignoreTrimWhitespace": false
 }
