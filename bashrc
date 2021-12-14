@@ -65,12 +65,8 @@ unset GOROOT
 
 
 alias a="$PAGER"
-alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
 alias c="$SYSTEM_CLIPBOARD_COMMAND"
 alias e="$EDITOR"
-alias f='fuck'
-alias fuck='TF_CMD=$(TF_ALIAS=fuck PYTHONIOENCODING=utf-8 TF_SHELL_ALIASES=$(alias) thefuck $(fc -ln -1)) && eval $TF_CMD; history -s $TF_CMD'
-alias g='google.sh'
 alias info='info --vi-key'
 alias l='ls -CF'
 alias la='ls -A'
@@ -79,9 +75,7 @@ alias m='make'
 alias man='PAGER=less moreman'
 alias note='typora ~/Documents/Note.md'
 alias p='proxychains'
-alias pafd='cd ~/Code/pafd-automated/ ; python main.py'
 alias sl='ls'
-alias t='firefox --new-tab'
 alias typora="typora-nohup"
 alias which='(alias; declare -f) | /usr/bin/which --tty-only --read-alias --read-functions --show-tilde --show-dot'
 alias x='xdg-open'
@@ -96,7 +90,6 @@ for COLOR_AUTO in ls grep egrep fgrep xzegrep xzfgrep xzgrep zegrep zfgrep zgrep
 do
     alias $COLOR_AUTO="$COLOR_AUTO --color=auto"
 done
-
 
 pet-prev () 
 { 

@@ -67,7 +67,6 @@
             ]
         },
     ],
-    "vim.leader": "<space>",
     "vim.handleKeys": {
         "<C-a>": false,
         "<C-f>": false,
@@ -168,6 +167,9 @@
     "julia.symbolCacheDownload": true,
     "julia.enableTelemetry": true,
     "sync.gist": "03f7402518bd4d828b316d2985e95a4a",
+    "diffEditor.ignoreTrimWhitespace": false,
     "workbench.statusBar.visible": false,
-    "diffEditor.ignoreTrimWhitespace": false
+    "search.mode": "reuseEditor",
+    "vim.foldfix": true,
+    "vim.history": 500
 }
