@@ -1,175 +1,178 @@
 {
-    "editor.renderLineHighlight": "all",
-    "http.proxy": "http://127.0.0.1:8118",
-    // ============== VIM ========================
-    "vim.easymotion": true,
-    "vim.incsearch": true,
-    "vim.useSystemClipboard": true,
-    "vim.useCtrlKeys": true,
-    "vim.hlsearch": true,
-    "vim.insertModeKeyBindings": [
-        {
-        "before": ["j", "k"],
-        "after": ["<Esc>"]
-        }
-    ],
-    "vim.normalModeKeyBindingsNonRecursive": [
-        {
-            "before": [
-                "<C-h>"
-            ],
-            "after": [
-                "<C-w>",
-                "h"
-            ]
-        },
-        {
-            "before": [
-                "<C-k>"
-            ],
-            "commands": [
-                "editor.action.showHover",
-            ]
-        },
-        {
-            "before": [
-                "<C-l>"
-            ],
-            "after": [
-                "<C-w>",
-                "l"
-            ]
-        },
-        {
-            "before": [
-                ","
-            ],
-            "after": [
-                "<C-w>"
-            ]
-        }
-    ],
-    "vim.visualModeKeyBindings": [
-        {
-            "before": [
-                ">"
-            ],
-            "commands": [
-                "editor.action.indentLines"
-            ]
-        },
-        {
-            "before": [
-                "<"
-            ],
-            "commands": [
-                "editor.action.outdentLines"
-            ]
-        },
-    ],
-    "vim.handleKeys": {
-        "<C-a>": false,
-        "<C-f>": false,
-        "<C-b>": false,
-        "<C-t>": false,
-        "<C-e>": false,
-        "<C-w>": false,
-        "<C-j>": false,
+  "editor.renderLineHighlight": "all",
+  "http.proxy": "http://127.0.0.1:8118",
+  "vim.incsearch": true,
+  "vim.useSystemClipboard": true,
+  "vim.useCtrlKeys": true,
+  "vim.hlsearch": true,
+  "vim.insertModeKeyBindings": [
+    {
+      "before": [
+        "j",
+        "k"
+      ],
+      "after": [
+        "<Esc>"
+      ]
+    }
+  ],
+  "vim.normalModeKeyBindingsNonRecursive": [
+    {
+      "before": [
+        "<C-h>"
+      ],
+      "after": [
+        "<C-w>",
+        "h"
+      ]
     },
-    "vim.sneak": true,
-    "vim.sneakUseIgnorecaseAndSmartcase": true,
-    "vim.surround": true,
-    "vim.camelCaseMotion.enable": true,
-    "vim.debug.silent": true,
-    "vim.autoSwitchInputMethod.enable": true,
-    "vim.autoSwitchInputMethod.defaultIM": "xkb:us::eng",
-    "vim.autoSwitchInputMethod.obtainIMCmd": "/usr/bin/ibus engine",
-    "vim.autoSwitchInputMethod.switchIMCmd": "/usr/bin/ibus engine {im}",
-
-    // For ligatures (character combination).
-    "editor.fontFamily": "'Fira Code', 'Cascadia Code', 'DejaVu Sans Mono', 'Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback'",
-
-    "explorer.confirmDelete": false,
-    "editor.smoothScrolling": true,
-    "workbench.list.smoothScrolling": true,
-    "editor.lineNumbers": "relative",
-    "editor.renderWhitespace": "none", // removes whitespace chars
-    "editor.renderIndentGuides": false, // removes indent guides
-
-    "explorer.openEditors.visible": 0,
-    "leetcode.hint.configWebviewMarkdown": false,
-    "leetcode.workspaceFolder": "/home/ofey/.leetcode",
-    "workbench.iconTheme": "material-icon-theme",
-    "leetcode.defaultLanguage": "python3",
-    "leetcode.hint.commentDescription": false,
-    "leetcode.hint.commandShortcut": false,
-    "git.ignoreLegacyWarning": true,
-    "git.autofetch": true,
-    "cmake.configureOnOpen": true,
-    "go.useLanguageServer": true,
-    "explorer.confirmDragAndDrop": false,
-    "git.confirmSync": false,
-    "settingsSync.ignoredSettings": [
-        "editor.fontFamily",
-        "terminal.integrated.fontFamily"
-    ],
-    "settingsSync.keybindingsPerPlatform": false,
-    "workbench.startupEditor": "newUntitledFile",
-    "files.associations": {
-        "*.grm": "yacc",
-        "*.lex": "lex",
-        ".env": "shellscript"
+    {
+      "before": [
+        "<C-k>"
+      ],
+      "commands": [
+        "editor.action.showHover"
+      ]
     },
-    "workbench.editorAssociations": {
-        "*.ipynb": "jupyter-notebook"
+    {
+      "before": [
+        "<C-l>"
+      ],
+      "after": [
+        "<C-w>",
+        "l"
+      ]
     },
-    "notebook.cellToolbarLocation": {
-        "default": "right",
-        "jupyter-notebook": "left"
+    {
+      "before": [
+        ","
+      ],
+      "after": [
+        "<C-w>"
+      ]
+    }
+  ],
+  "vim.visualModeKeyBindings": [
+    {
+      "before": [
+        ">"
+      ],
+      "commands": [
+        "editor.action.indentLines"
+      ]
     },
-    "editor.suggestSelection": "first",
-    "security.workspace.trust.untrustedFiles": "open",
-    "security.workspace.trust.enabled": false,
-    "editor.fontLigatures": true,
-    "editor.foldingStrategy": "indentation",
-    "workbench.colorTheme": "Dark++ Italic",
-    "editor.minimap.enabled": false,
-    "terminal.integrated.env.linux": {
-        "IN_VSCODE_INTEGRATED_TERMINAL": "true"
-    },
-    "update.mode": "none",
-    "latex-workshop.view.pdf.viewer": "browser",
-    "window.menuBarVisibility": "hidden",
-    "todo-tree.general.tags": [
-        "BUG",
-        "HACK",
-        "FIXME",
-        "TODO",
-        "XXX",
-        "REFACTOR"
-    ],
-    "cSpell.enabled": false,
-    "[markdown]": {
-        "editor.wordWrap": "on",
-        "editor.quickSuggestions": false,
-        "editor.tabSize": 2
-    },
-    "workbench.activityBar.visible": false,
-    "alive.autoLoadOnSave": true,
-    "alive.debug": true,
-    "alive.swank.checkForLatest": true,
-    "alive.format.indentWidth": 4,
-    "window.zoomLevel": 5,
-    "files.autoSave": "afterDelay",
-    "terminal.integrated.commandsToSkipShell": [
-        "language-julia.interrupt"
-    ],
-    "julia.symbolCacheDownload": true,
-    "julia.enableTelemetry": true,
-    "sync.gist": "03f7402518bd4d828b316d2985e95a4a",
-    "diffEditor.ignoreTrimWhitespace": false,
-    "workbench.statusBar.visible": false,
-    "search.mode": "reuseEditor",
-    "vim.foldfix": true,
-    "vim.history": 500
+    {
+      "before": [
+        "<"
+      ],
+      "commands": [
+        "editor.action.outdentLines"
+      ]
+    }
+  ],
+  "vim.handleKeys": {
+    "<C-a>": false,
+    "<C-f>": false,
+    "<C-b>": false,
+    "<C-t>": false,
+    "<C-e>": false,
+    "<C-w>": false,
+    "<C-j>": false
+  },
+  "vim.sneak": true,
+  "vim.sneakUseIgnorecaseAndSmartcase": true,
+  "vim.surround": true,
+  "vim.camelCaseMotion.enable": true,
+  "vim.debug.silent": true,
+  "vim.autoSwitchInputMethod.enable": true,
+  "vim.autoSwitchInputMethod.defaultIM": "xkb:us::eng",
+  "vim.autoSwitchInputMethod.obtainIMCmd": "/usr/bin/ibus engine",
+  "vim.autoSwitchInputMethod.switchIMCmd": "/usr/bin/ibus engine {im}",
+  // For ligatures (character combination).
+  "editor.fontFamily": "'Fira Code', 'Cascadia Code', 'DejaVu Sans Mono', 'Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback'",
+  "explorer.confirmDelete": false,
+  "editor.smoothScrolling": true,
+  "workbench.list.smoothScrolling": true,
+  "editor.lineNumbers": "relative",
+  "editor.renderWhitespace": "none", // removes whitespace chars
+  "explorer.openEditors.visible": 0,
+  "leetcode.hint.configWebviewMarkdown": false,
+  "leetcode.workspaceFolder": "/home/ofey/.leetcode",
+  "workbench.iconTheme": "material-icon-theme",
+  "leetcode.defaultLanguage": "python3",
+  "leetcode.hint.commentDescription": false,
+  "leetcode.hint.commandShortcut": false,
+  "git.ignoreLegacyWarning": true,
+  "git.autofetch": true,
+  "cmake.configureOnOpen": true,
+  "go.useLanguageServer": true,
+  "explorer.confirmDragAndDrop": false,
+  "git.confirmSync": false,
+  "settingsSync.ignoredSettings": [
+    "editor.fontFamily",
+    "terminal.integrated.fontFamily"
+  ],
+  "settingsSync.keybindingsPerPlatform": false,
+  "workbench.startupEditor": "newUntitledFile",
+  "files.associations": {
+    "*.grm": "yacc",
+    "*.lex": "lex",
+    ".env": "shellscript",
+    "Grammar": "plaintext"
+  },
+  "workbench.editorAssociations": {
+    "*.ipynb": "jupyter-notebook"
+  },
+  "notebook.cellToolbarLocation": {
+    "default": "right",
+    "jupyter-notebook": "left"
+  },
+  "editor.suggestSelection": "first",
+  "security.workspace.trust.untrustedFiles": "open",
+  "security.workspace.trust.enabled": false,
+  "editor.fontLigatures": true,
+  "editor.foldingStrategy": "indentation",
+  "workbench.colorTheme": "Dark++ Italic",
+  "terminal.integrated.env.linux": {
+    "IN_VSCODE_INTEGRATED_TERMINAL": "true"
+  },
+  "update.mode": "none",
+  "latex-workshop.view.pdf.viewer": "browser",
+  "window.menuBarVisibility": "hidden",
+  "todo-tree.general.tags": [
+    "BUG",
+    "HACK",
+    "FIXME",
+    "TODO",
+    "XXX",
+    "REFACTOR"
+  ],
+  "cSpell.enabled": false,
+  "[markdown]": {
+    "editor.wordWrap": "on",
+    "editor.quickSuggestions": false,
+    "editor.tabSize": 2
+  },
+  "workbench.activityBar.visible": false,
+  "window.zoomLevel": 5,
+  "files.autoSave": "afterDelay",
+  "terminal.integrated.commandsToSkipShell": [
+    "language-julia.interrupt"
+  ],
+  "julia.symbolCacheDownload": true,
+  "julia.enableTelemetry": true,
+  "diffEditor.ignoreTrimWhitespace": false,
+  "vim.history": 5000,
+  "files.exclude": {
+    "**/.classpath": true,
+    "**/.project": true,
+    "**/.settings": true,
+    "**/.factorypath": true
+  },
+  "workspaceNotes.noteRepoPath": "~/Documents/Notes",
+  "license.author": "Weiwen Chen",
+  "editor.minimap.enabled": false,
+  "editor.guides.indentation": false,
+  "workbench.statusBar.visible": false,
+  "typescript.updateImportsOnFileMove.enabled": "always",
 }

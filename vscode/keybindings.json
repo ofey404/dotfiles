@@ -60,7 +60,7 @@
     {
         "key": "f11",
         "command": "bookmarks.toggle",
-        "when": "editorTextFocus"
+        "when": "!inDebugMode && editorTextFocus"
     },
     {
         "key": "ctrl+alt+k",
@@ -256,5 +256,28 @@
         "key": "ctrl+a",
         "command": "-extension.vim_ctrl+a",
         "when": "editorTextFocus && vim.active && vim.use<C-a> && !inDebugRepl"
+    },
+    {
+        "key": "ctrl+n",
+        "command": "-workbench.action.files.newUntitledFile"
+    },
+    {
+        "key": "ctrl+alt+n",
+        "command": "workspace-notes.pickWorkspaceNote"
+    },
+    {
+        "key": "alt+enter",
+        "command": "editor.action.quickFix",
+        "when": "editorHasCodeActionsProvider && editorTextFocus && !editorReadonly"
+    },
+    {
+        "key": "alt+enter",
+        "command": "problems.action.showQuickFixes",
+        "when": "problemFocus"
+    },
+    {
+        "key": "ctrl+shift+i",
+        "command": "-jsonnet.previewToSide",
+        "when": "editorFocus"
     }
 ]

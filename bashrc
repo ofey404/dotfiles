@@ -33,11 +33,9 @@ else
     export VISUAL=code
 fi
 
-
 [[ -f /usr/share/fzf/shell/key-bindings.bash ]] && source /usr/share/fzf/shell/key-bindings.bash [[ -f /etc/bash_completion.d/fzf ]] && source /etc/bash_completion.d/fzf
 [[ $- == *i* ]] && source /opt/bash-git-prompt/gitprompt.sh
 [[ -f /.secret/secretrc ]] && source ~/.secret/secretrc
-[[ -f /etc/profile.d/autojump.sh ]] && source /etc/profile.d/autojump.sh
 [[ -s "/home/ofey/.gvm/scripts/gvm" ]] && source "/home/ofey/.gvm/scripts/gvm"
 
 
@@ -60,7 +58,6 @@ export VIRTUALENVWRAPPER_PROJECT_FILENAME=.project
 export VIRTUALENVWRAPPER_SCRIPT=/home/ofey/.local/bin/virtualenvwrapper.sh
 export WORKON_HOME=/home/ofey/.virtualenvs
 
-
 unset GOROOT
 
 
@@ -73,7 +70,7 @@ alias la='ls -A'
 alias ll='ls -alF'
 alias m='make'
 alias man='PAGER=less moreman'
-alias note='typora ~/Documents/Note.md'
+alias note='typora ~/Documents/Notes/QuickNote.md'
 alias p='proxychains'
 alias sl='ls'
 alias typora="typora-nohup"

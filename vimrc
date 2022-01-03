@@ -12,6 +12,7 @@ set nu rnu
 set mouse=a
 set history=1000                " Store a ton of history (default is 20)
 set cursorline
+inoremap jk <Esc>
 
 " RC per project directory
 set exrc
