@@ -70,7 +70,7 @@ alias la='ls -A'
 alias ll='ls -alF'
 alias m='make'
 alias man='PAGER=less moreman'
-alias note='typora ~/Documents/Notes/QuickNote.md'
+alias note="$EDITOR ~/Documents/Notes/QuickNote.md"
 alias p='proxychains'
 alias sl='ls'
 alias typora="typora-nohup"

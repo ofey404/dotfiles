@@ -28,6 +28,15 @@
     },
     {
       "before": [
+        "g",
+        "r"
+      ],
+      "commands": [
+        "editor.action.goToReferences"
+      ]
+    },
+    {
+      "before": [
         "<C-k>"
       ],
       "commands": [
@@ -113,7 +122,7 @@
     "terminal.integrated.fontFamily"
   ],
   "settingsSync.keybindingsPerPlatform": false,
-  "workbench.startupEditor": "newUntitledFile",
+  // "workbench.startupEditor": "newUntitledFile",
   "files.associations": {
     "*.grm": "yacc",
     "*.lex": "lex",
@@ -139,14 +148,6 @@
   "update.mode": "none",
   "latex-workshop.view.pdf.viewer": "browser",
   "window.menuBarVisibility": "hidden",
-  "todo-tree.general.tags": [
-    "BUG",
-    "HACK",
-    "FIXME",
-    "TODO",
-    "XXX",
-    "REFACTOR"
-  ],
   "cSpell.enabled": false,
   "[markdown]": {
     "editor.wordWrap": "on",
@@ -154,7 +155,6 @@
     "editor.tabSize": 2
   },
   "workbench.activityBar.visible": false,
-  "window.zoomLevel": 5,
   "files.autoSave": "afterDelay",
   "terminal.integrated.commandsToSkipShell": [
     "language-julia.interrupt"
@@ -171,8 +171,14 @@
   },
   "workspaceNotes.noteRepoPath": "~/Documents/Notes",
   "license.author": "Weiwen Chen",
-  "editor.minimap.enabled": false,
   "editor.guides.indentation": false,
-  "workbench.statusBar.visible": false,
   "typescript.updateImportsOnFileMove.enabled": "always",
+  "[typescript]": {
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+  },
+  "editor.minimap.enabled": false,
+  "window.zoomLevel": 4,
+  "workbench.startupEditor": "none",
+  "workbench.statusBar.visible": false,
+  "C_Cpp.clang_format_fallbackStyle": "Google",
 }
