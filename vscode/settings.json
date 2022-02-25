@@ -1,9 +1,33 @@
 {
-  "editor.renderLineHighlight": "all",
+  // System
   "http.proxy": "http://127.0.0.1:8118",
+  "update.mode": "none",
+  "explorer.confirmDragAndDrop": false,
+  "explorer.confirmDelete": false,
+  "explorer.openEditors.visible": 0,
+  "security.workspace.trust.untrustedFiles": "open",
+  "security.workspace.trust.enabled": false,
+  // Editing
+  "editor.suggestSelection": "first",
+  "editor.guides.indentation": false,
+  // Appearence
+  "window.zoomLevel": 4,
+  "editor.renderLineHighlight": "all",
+  "editor.fontFamily": "'Fira Code', 'Cascadia Code', 'DejaVu Sans Mono', 'Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback'",
+  "editor.fontLigatures": true,
+  "editor.foldingStrategy": "indentation",
+  "workbench.colorTheme": "Dark++ Italic",
+  "editor.smoothScrolling": true,
+  "editor.minimap.enabled": false,
+  "editor.lineNumbers": "relative",
+  "editor.renderWhitespace": "none", // removes whitespace chars
+  "workbench.iconTheme": "material-icon-theme",
+  "workbench.list.smoothScrolling": true,
+  // VSCodeVim
   "vim.incsearch": true,
   "vim.useSystemClipboard": true,
   "vim.useCtrlKeys": true,
+  "vim.history": 5000,
   "vim.hlsearch": true,
   "vim.insertModeKeyBindings": [
     {
@@ -97,32 +121,26 @@
   "vim.autoSwitchInputMethod.defaultIM": "xkb:us::eng",
   "vim.autoSwitchInputMethod.obtainIMCmd": "/usr/bin/ibus engine",
   "vim.autoSwitchInputMethod.switchIMCmd": "/usr/bin/ibus engine {im}",
-  // For ligatures (character combination).
-  "editor.fontFamily": "'Fira Code', 'Cascadia Code', 'DejaVu Sans Mono', 'Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback'",
-  "explorer.confirmDelete": false,
-  "editor.smoothScrolling": true,
-  "workbench.list.smoothScrolling": true,
-  "editor.lineNumbers": "relative",
-  "editor.renderWhitespace": "none", // removes whitespace chars
-  "explorer.openEditors.visible": 0,
+  // Extensions
   "leetcode.hint.configWebviewMarkdown": false,
   "leetcode.workspaceFolder": "/home/ofey/.leetcode",
-  "workbench.iconTheme": "material-icon-theme",
   "leetcode.defaultLanguage": "python3",
   "leetcode.hint.commentDescription": false,
   "leetcode.hint.commandShortcut": false,
   "git.ignoreLegacyWarning": true,
   "git.autofetch": true,
+  "git.confirmSync": false,
   "cmake.configureOnOpen": true,
   "go.useLanguageServer": true,
-  "explorer.confirmDragAndDrop": false,
-  "git.confirmSync": false,
+  "notebook.cellToolbarLocation": {
+    "default": "right",
+    "jupyter-notebook": "left"
+  },
   "settingsSync.ignoredSettings": [
     "editor.fontFamily",
     "terminal.integrated.fontFamily"
   ],
   "settingsSync.keybindingsPerPlatform": false,
-  // "workbench.startupEditor": "newUntitledFile",
   "files.associations": {
     "*.grm": "yacc",
     "*.lex": "lex",
@@ -132,28 +150,9 @@
   "workbench.editorAssociations": {
     "*.ipynb": "jupyter-notebook"
   },
-  "notebook.cellToolbarLocation": {
-    "default": "right",
-    "jupyter-notebook": "left"
-  },
-  "editor.suggestSelection": "first",
-  "security.workspace.trust.untrustedFiles": "open",
-  "security.workspace.trust.enabled": false,
-  "editor.fontLigatures": true,
-  "editor.foldingStrategy": "indentation",
-  "workbench.colorTheme": "Dark++ Italic",
-  "terminal.integrated.env.linux": {
-    "IN_VSCODE_INTEGRATED_TERMINAL": "true"
-  },
-  "update.mode": "none",
   "latex-workshop.view.pdf.viewer": "browser",
   "window.menuBarVisibility": "hidden",
   "cSpell.enabled": false,
-  "[markdown]": {
-    "editor.wordWrap": "on",
-    "editor.quickSuggestions": false,
-    "editor.tabSize": 2
-  },
   "workbench.activityBar.visible": false,
   "files.autoSave": "afterDelay",
   "terminal.integrated.commandsToSkipShell": [
@@ -162,23 +161,34 @@
   "julia.symbolCacheDownload": true,
   "julia.enableTelemetry": true,
   "diffEditor.ignoreTrimWhitespace": false,
-  "vim.history": 5000,
   "files.exclude": {
     "**/.classpath": true,
     "**/.project": true,
     "**/.settings": true,
     "**/.factorypath": true
   },
-  "workspaceNotes.noteRepoPath": "~/Documents/Notes",
   "license.author": "Weiwen Chen",
-  "editor.guides.indentation": false,
   "typescript.updateImportsOnFileMove.enabled": "always",
+  "workbench.startupEditor": "none",
+  "C_Cpp.clang_format_fallbackStyle": "Google",
+  "python.autoComplete.extraPaths": [
+    "__pypackages__/<major.minor>/lib"
+  ],
+  "python.analysis.extraPaths": [
+    "__pypackages__/<major.minor>/lib"
+  ],
+  // File specific settings
+  "[markdown]": {
+    "editor.wordWrap": "on",
+    "editor.quickSuggestions": false,
+    "editor.tabSize": 2
+  },
   "[typescript]": {
     "editor.defaultFormatter": "dbaeumer.vscode-eslint"
   },
-  "editor.minimap.enabled": false,
-  "window.zoomLevel": 4,
-  "workbench.startupEditor": "none",
-  "workbench.statusBar.visible": false,
-  "C_Cpp.clang_format_fallbackStyle": "Google",
+  // Personal hack
+  "terminal.integrated.env.linux": {
+    "IN_VSCODE_INTEGRATED_TERMINAL": "true"
+  },
+  "workspaceNotes.noteRepoPath": "~/Documents/Notes",
 }

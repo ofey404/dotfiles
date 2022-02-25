@@ -69,7 +69,7 @@ alias l='ls -CF'
 alias la='ls -A'
 alias ll='ls -alF'
 alias m='make'
-alias man='PAGER=less moreman'
+alias man='moreman'
 alias note="$EDITOR ~/Documents/Notes/QuickNote.md"
 alias p='proxychains'
 alias sl='ls'
